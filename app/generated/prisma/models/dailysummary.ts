@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `dailysummary` model and its related types.
+ * This file exports the `dailySummary` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,20 +13,20 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model dailysummary
+ * Model dailySummary
  * 
  */
-export type dailysummaryModel = runtime.Types.Result.DefaultSelection<Prisma.$dailysummaryPayload>
+export type dailySummaryModel = runtime.Types.Result.DefaultSelection<Prisma.$dailySummaryPayload>
 
-export type AggregateDailysummary = {
-  _count: DailysummaryCountAggregateOutputType | null
-  _avg: DailysummaryAvgAggregateOutputType | null
-  _sum: DailysummarySumAggregateOutputType | null
-  _min: DailysummaryMinAggregateOutputType | null
-  _max: DailysummaryMaxAggregateOutputType | null
+export type AggregateDailySummary = {
+  _count: DailySummaryCountAggregateOutputType | null
+  _avg: DailySummaryAvgAggregateOutputType | null
+  _sum: DailySummarySumAggregateOutputType | null
+  _min: DailySummaryMinAggregateOutputType | null
+  _max: DailySummaryMaxAggregateOutputType | null
 }
 
-export type DailysummaryAvgAggregateOutputType = {
+export type DailySummaryAvgAggregateOutputType = {
   modeFuelLevel: number | null
   modeOilPressure: number | null
   modeBattVoltage: number | null
@@ -42,7 +42,7 @@ export type DailysummaryAvgAggregateOutputType = {
   sampleCount: number | null
 }
 
-export type DailysummarySumAggregateOutputType = {
+export type DailySummarySumAggregateOutputType = {
   modeFuelLevel: number | null
   modeOilPressure: number | null
   modeBattVoltage: number | null
@@ -58,7 +58,7 @@ export type DailysummarySumAggregateOutputType = {
   sampleCount: number | null
 }
 
-export type DailysummaryMinAggregateOutputType = {
+export type DailySummaryMinAggregateOutputType = {
   id: string | null
   vehicleId: string | null
   date: Date | null
@@ -78,7 +78,7 @@ export type DailysummaryMinAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type DailysummaryMaxAggregateOutputType = {
+export type DailySummaryMaxAggregateOutputType = {
   id: string | null
   vehicleId: string | null
   date: Date | null
@@ -98,7 +98,7 @@ export type DailysummaryMaxAggregateOutputType = {
   updatedAt: Date | null
 }
 
-export type DailysummaryCountAggregateOutputType = {
+export type DailySummaryCountAggregateOutputType = {
   id: number
   vehicleId: number
   date: number
@@ -120,7 +120,7 @@ export type DailysummaryCountAggregateOutputType = {
 }
 
 
-export type DailysummaryAvgAggregateInputType = {
+export type DailySummaryAvgAggregateInputType = {
   modeFuelLevel?: true
   modeOilPressure?: true
   modeBattVoltage?: true
@@ -136,7 +136,7 @@ export type DailysummaryAvgAggregateInputType = {
   sampleCount?: true
 }
 
-export type DailysummarySumAggregateInputType = {
+export type DailySummarySumAggregateInputType = {
   modeFuelLevel?: true
   modeOilPressure?: true
   modeBattVoltage?: true
@@ -152,7 +152,7 @@ export type DailysummarySumAggregateInputType = {
   sampleCount?: true
 }
 
-export type DailysummaryMinAggregateInputType = {
+export type DailySummaryMinAggregateInputType = {
   id?: true
   vehicleId?: true
   date?: true
@@ -172,7 +172,7 @@ export type DailysummaryMinAggregateInputType = {
   updatedAt?: true
 }
 
-export type DailysummaryMaxAggregateInputType = {
+export type DailySummaryMaxAggregateInputType = {
   id?: true
   vehicleId?: true
   date?: true
@@ -192,7 +192,7 @@ export type DailysummaryMaxAggregateInputType = {
   updatedAt?: true
 }
 
-export type DailysummaryCountAggregateInputType = {
+export type DailySummaryCountAggregateInputType = {
   id?: true
   vehicleId?: true
   date?: true
@@ -213,93 +213,93 @@ export type DailysummaryCountAggregateInputType = {
   _all?: true
 }
 
-export type DailysummaryAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type DailySummaryAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which dailysummary to aggregate.
+   * Filter which dailySummary to aggregate.
    */
-  where?: Prisma.dailysummaryWhereInput
+  where?: Prisma.dailySummaryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dailysummaries to fetch.
+   * Determine the order of dailySummaries to fetch.
    */
-  orderBy?: Prisma.dailysummaryOrderByWithRelationInput | Prisma.dailysummaryOrderByWithRelationInput[]
+  orderBy?: Prisma.dailySummaryOrderByWithRelationInput | Prisma.dailySummaryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.dailysummaryWhereUniqueInput
+  cursor?: Prisma.dailySummaryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dailysummaries from the position of the cursor.
+   * Take `±n` dailySummaries from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dailysummaries.
+   * Skip the first `n` dailySummaries.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned dailysummaries
+   * Count returned dailySummaries
   **/
-  _count?: true | DailysummaryCountAggregateInputType
+  _count?: true | DailySummaryCountAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to average
   **/
-  _avg?: DailysummaryAvgAggregateInputType
+  _avg?: DailySummaryAvgAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to sum
   **/
-  _sum?: DailysummarySumAggregateInputType
+  _sum?: DailySummarySumAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the minimum value
   **/
-  _min?: DailysummaryMinAggregateInputType
+  _min?: DailySummaryMinAggregateInputType
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
    * Select which fields to find the maximum value
   **/
-  _max?: DailysummaryMaxAggregateInputType
+  _max?: DailySummaryMaxAggregateInputType
 }
 
-export type GetDailysummaryAggregateType<T extends DailysummaryAggregateArgs> = {
-      [P in keyof T & keyof AggregateDailysummary]: P extends '_count' | 'count'
+export type GetDailySummaryAggregateType<T extends DailySummaryAggregateArgs> = {
+      [P in keyof T & keyof AggregateDailySummary]: P extends '_count' | 'count'
     ? T[P] extends true
       ? number
-      : Prisma.GetScalarType<T[P], AggregateDailysummary[P]>
-    : Prisma.GetScalarType<T[P], AggregateDailysummary[P]>
+      : Prisma.GetScalarType<T[P], AggregateDailySummary[P]>
+    : Prisma.GetScalarType<T[P], AggregateDailySummary[P]>
 }
 
 
 
 
-export type dailysummaryGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.dailysummaryWhereInput
-  orderBy?: Prisma.dailysummaryOrderByWithAggregationInput | Prisma.dailysummaryOrderByWithAggregationInput[]
-  by: Prisma.DailysummaryScalarFieldEnum[] | Prisma.DailysummaryScalarFieldEnum
-  having?: Prisma.dailysummaryScalarWhereWithAggregatesInput
+export type dailySummaryGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.dailySummaryWhereInput
+  orderBy?: Prisma.dailySummaryOrderByWithAggregationInput | Prisma.dailySummaryOrderByWithAggregationInput[]
+  by: Prisma.DailySummaryScalarFieldEnum[] | Prisma.DailySummaryScalarFieldEnum
+  having?: Prisma.dailySummaryScalarWhereWithAggregatesInput
   take?: number
   skip?: number
-  _count?: DailysummaryCountAggregateInputType | true
-  _avg?: DailysummaryAvgAggregateInputType
-  _sum?: DailysummarySumAggregateInputType
-  _min?: DailysummaryMinAggregateInputType
-  _max?: DailysummaryMaxAggregateInputType
+  _count?: DailySummaryCountAggregateInputType | true
+  _avg?: DailySummaryAvgAggregateInputType
+  _sum?: DailySummarySumAggregateInputType
+  _min?: DailySummaryMinAggregateInputType
+  _max?: DailySummaryMaxAggregateInputType
 }
 
-export type DailysummaryGroupByOutputType = {
+export type DailySummaryGroupByOutputType = {
   id: string
   vehicleId: string
   date: Date
@@ -317,53 +317,53 @@ export type DailysummaryGroupByOutputType = {
   RunningTime: number
   sampleCount: number
   updatedAt: Date
-  _count: DailysummaryCountAggregateOutputType | null
-  _avg: DailysummaryAvgAggregateOutputType | null
-  _sum: DailysummarySumAggregateOutputType | null
-  _min: DailysummaryMinAggregateOutputType | null
-  _max: DailysummaryMaxAggregateOutputType | null
+  _count: DailySummaryCountAggregateOutputType | null
+  _avg: DailySummaryAvgAggregateOutputType | null
+  _sum: DailySummarySumAggregateOutputType | null
+  _min: DailySummaryMinAggregateOutputType | null
+  _max: DailySummaryMaxAggregateOutputType | null
 }
 
-export type GetDailysummaryGroupByPayload<T extends dailysummaryGroupByArgs> = Prisma.PrismaPromise<
+export type GetDailySummaryGroupByPayload<T extends dailySummaryGroupByArgs> = Prisma.PrismaPromise<
   Array<
-    Prisma.PickEnumerable<DailysummaryGroupByOutputType, T['by']> &
+    Prisma.PickEnumerable<DailySummaryGroupByOutputType, T['by']> &
       {
-        [P in ((keyof T) & (keyof DailysummaryGroupByOutputType))]: P extends '_count'
+        [P in ((keyof T) & (keyof DailySummaryGroupByOutputType))]: P extends '_count'
           ? T[P] extends boolean
             ? number
-            : Prisma.GetScalarType<T[P], DailysummaryGroupByOutputType[P]>
-          : Prisma.GetScalarType<T[P], DailysummaryGroupByOutputType[P]>
+            : Prisma.GetScalarType<T[P], DailySummaryGroupByOutputType[P]>
+          : Prisma.GetScalarType<T[P], DailySummaryGroupByOutputType[P]>
       }
     >
   >
 
 
 
-export type dailysummaryWhereInput = {
-  AND?: Prisma.dailysummaryWhereInput | Prisma.dailysummaryWhereInput[]
-  OR?: Prisma.dailysummaryWhereInput[]
-  NOT?: Prisma.dailysummaryWhereInput | Prisma.dailysummaryWhereInput[]
-  id?: Prisma.StringFilter<"dailysummary"> | string
-  vehicleId?: Prisma.StringFilter<"dailysummary"> | string
-  date?: Prisma.DateTimeFilter<"dailysummary"> | Date | string
-  modeFuelLevel?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeOilPressure?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeBattVoltage?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineLoad?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeSpeed?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineRPM?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineTemp?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  totalDistance?: Prisma.FloatFilter<"dailysummary"> | number
-  totalFuelUsed?: Prisma.FloatFilter<"dailysummary"> | number
-  totalEngineHrs?: Prisma.FloatFilter<"dailysummary"> | number
-  IdleTime?: Prisma.FloatFilter<"dailysummary"> | number
-  RunningTime?: Prisma.FloatFilter<"dailysummary"> | number
-  sampleCount?: Prisma.IntFilter<"dailysummary"> | number
-  updatedAt?: Prisma.DateTimeFilter<"dailysummary"> | Date | string
+export type dailySummaryWhereInput = {
+  AND?: Prisma.dailySummaryWhereInput | Prisma.dailySummaryWhereInput[]
+  OR?: Prisma.dailySummaryWhereInput[]
+  NOT?: Prisma.dailySummaryWhereInput | Prisma.dailySummaryWhereInput[]
+  id?: Prisma.StringFilter<"dailySummary"> | string
+  vehicleId?: Prisma.StringFilter<"dailySummary"> | string
+  date?: Prisma.DateTimeFilter<"dailySummary"> | Date | string
+  modeFuelLevel?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeOilPressure?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeBattVoltage?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineLoad?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeSpeed?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineRPM?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineTemp?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  totalDistance?: Prisma.FloatFilter<"dailySummary"> | number
+  totalFuelUsed?: Prisma.FloatFilter<"dailySummary"> | number
+  totalEngineHrs?: Prisma.FloatFilter<"dailySummary"> | number
+  IdleTime?: Prisma.FloatFilter<"dailySummary"> | number
+  RunningTime?: Prisma.FloatFilter<"dailySummary"> | number
+  sampleCount?: Prisma.IntFilter<"dailySummary"> | number
+  updatedAt?: Prisma.DateTimeFilter<"dailySummary"> | Date | string
   vehicle?: Prisma.XOR<Prisma.VehicleScalarRelationFilter, Prisma.vehicleWhereInput>
 }
 
-export type dailysummaryOrderByWithRelationInput = {
+export type dailySummaryOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   vehicleId?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -382,35 +382,35 @@ export type dailysummaryOrderByWithRelationInput = {
   sampleCount?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   vehicle?: Prisma.vehicleOrderByWithRelationInput
-  _relevance?: Prisma.dailysummaryOrderByRelevanceInput
+  _relevance?: Prisma.dailySummaryOrderByRelevanceInput
 }
 
-export type dailysummaryWhereUniqueInput = Prisma.AtLeast<{
+export type dailySummaryWhereUniqueInput = Prisma.AtLeast<{
   id?: string
-  vehicleId_date?: Prisma.dailysummaryVehicleIdDateCompoundUniqueInput
-  AND?: Prisma.dailysummaryWhereInput | Prisma.dailysummaryWhereInput[]
-  OR?: Prisma.dailysummaryWhereInput[]
-  NOT?: Prisma.dailysummaryWhereInput | Prisma.dailysummaryWhereInput[]
-  vehicleId?: Prisma.StringFilter<"dailysummary"> | string
-  date?: Prisma.DateTimeFilter<"dailysummary"> | Date | string
-  modeFuelLevel?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeOilPressure?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeBattVoltage?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineLoad?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeSpeed?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineRPM?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineTemp?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  totalDistance?: Prisma.FloatFilter<"dailysummary"> | number
-  totalFuelUsed?: Prisma.FloatFilter<"dailysummary"> | number
-  totalEngineHrs?: Prisma.FloatFilter<"dailysummary"> | number
-  IdleTime?: Prisma.FloatFilter<"dailysummary"> | number
-  RunningTime?: Prisma.FloatFilter<"dailysummary"> | number
-  sampleCount?: Prisma.IntFilter<"dailysummary"> | number
-  updatedAt?: Prisma.DateTimeFilter<"dailysummary"> | Date | string
+  vehicleId_date?: Prisma.dailySummaryVehicleIdDateCompoundUniqueInput
+  AND?: Prisma.dailySummaryWhereInput | Prisma.dailySummaryWhereInput[]
+  OR?: Prisma.dailySummaryWhereInput[]
+  NOT?: Prisma.dailySummaryWhereInput | Prisma.dailySummaryWhereInput[]
+  vehicleId?: Prisma.StringFilter<"dailySummary"> | string
+  date?: Prisma.DateTimeFilter<"dailySummary"> | Date | string
+  modeFuelLevel?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeOilPressure?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeBattVoltage?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineLoad?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeSpeed?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineRPM?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineTemp?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  totalDistance?: Prisma.FloatFilter<"dailySummary"> | number
+  totalFuelUsed?: Prisma.FloatFilter<"dailySummary"> | number
+  totalEngineHrs?: Prisma.FloatFilter<"dailySummary"> | number
+  IdleTime?: Prisma.FloatFilter<"dailySummary"> | number
+  RunningTime?: Prisma.FloatFilter<"dailySummary"> | number
+  sampleCount?: Prisma.IntFilter<"dailySummary"> | number
+  updatedAt?: Prisma.DateTimeFilter<"dailySummary"> | Date | string
   vehicle?: Prisma.XOR<Prisma.VehicleScalarRelationFilter, Prisma.vehicleWhereInput>
 }, "id" | "vehicleId_date">
 
-export type dailysummaryOrderByWithAggregationInput = {
+export type dailySummaryOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   vehicleId?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -428,37 +428,37 @@ export type dailysummaryOrderByWithAggregationInput = {
   RunningTime?: Prisma.SortOrder
   sampleCount?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.dailysummaryCountOrderByAggregateInput
-  _avg?: Prisma.dailysummaryAvgOrderByAggregateInput
-  _max?: Prisma.dailysummaryMaxOrderByAggregateInput
-  _min?: Prisma.dailysummaryMinOrderByAggregateInput
-  _sum?: Prisma.dailysummarySumOrderByAggregateInput
+  _count?: Prisma.dailySummaryCountOrderByAggregateInput
+  _avg?: Prisma.dailySummaryAvgOrderByAggregateInput
+  _max?: Prisma.dailySummaryMaxOrderByAggregateInput
+  _min?: Prisma.dailySummaryMinOrderByAggregateInput
+  _sum?: Prisma.dailySummarySumOrderByAggregateInput
 }
 
-export type dailysummaryScalarWhereWithAggregatesInput = {
-  AND?: Prisma.dailysummaryScalarWhereWithAggregatesInput | Prisma.dailysummaryScalarWhereWithAggregatesInput[]
-  OR?: Prisma.dailysummaryScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.dailysummaryScalarWhereWithAggregatesInput | Prisma.dailysummaryScalarWhereWithAggregatesInput[]
-  id?: Prisma.StringWithAggregatesFilter<"dailysummary"> | string
-  vehicleId?: Prisma.StringWithAggregatesFilter<"dailysummary"> | string
-  date?: Prisma.DateTimeWithAggregatesFilter<"dailysummary"> | Date | string
-  modeFuelLevel?: Prisma.FloatNullableWithAggregatesFilter<"dailysummary"> | number | null
-  modeOilPressure?: Prisma.FloatNullableWithAggregatesFilter<"dailysummary"> | number | null
-  modeBattVoltage?: Prisma.FloatNullableWithAggregatesFilter<"dailysummary"> | number | null
-  modeEngineLoad?: Prisma.FloatNullableWithAggregatesFilter<"dailysummary"> | number | null
-  modeSpeed?: Prisma.FloatNullableWithAggregatesFilter<"dailysummary"> | number | null
-  modeEngineRPM?: Prisma.FloatNullableWithAggregatesFilter<"dailysummary"> | number | null
-  modeEngineTemp?: Prisma.FloatNullableWithAggregatesFilter<"dailysummary"> | number | null
-  totalDistance?: Prisma.FloatWithAggregatesFilter<"dailysummary"> | number
-  totalFuelUsed?: Prisma.FloatWithAggregatesFilter<"dailysummary"> | number
-  totalEngineHrs?: Prisma.FloatWithAggregatesFilter<"dailysummary"> | number
-  IdleTime?: Prisma.FloatWithAggregatesFilter<"dailysummary"> | number
-  RunningTime?: Prisma.FloatWithAggregatesFilter<"dailysummary"> | number
-  sampleCount?: Prisma.IntWithAggregatesFilter<"dailysummary"> | number
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"dailysummary"> | Date | string
+export type dailySummaryScalarWhereWithAggregatesInput = {
+  AND?: Prisma.dailySummaryScalarWhereWithAggregatesInput | Prisma.dailySummaryScalarWhereWithAggregatesInput[]
+  OR?: Prisma.dailySummaryScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.dailySummaryScalarWhereWithAggregatesInput | Prisma.dailySummaryScalarWhereWithAggregatesInput[]
+  id?: Prisma.StringWithAggregatesFilter<"dailySummary"> | string
+  vehicleId?: Prisma.StringWithAggregatesFilter<"dailySummary"> | string
+  date?: Prisma.DateTimeWithAggregatesFilter<"dailySummary"> | Date | string
+  modeFuelLevel?: Prisma.FloatNullableWithAggregatesFilter<"dailySummary"> | number | null
+  modeOilPressure?: Prisma.FloatNullableWithAggregatesFilter<"dailySummary"> | number | null
+  modeBattVoltage?: Prisma.FloatNullableWithAggregatesFilter<"dailySummary"> | number | null
+  modeEngineLoad?: Prisma.FloatNullableWithAggregatesFilter<"dailySummary"> | number | null
+  modeSpeed?: Prisma.FloatNullableWithAggregatesFilter<"dailySummary"> | number | null
+  modeEngineRPM?: Prisma.FloatNullableWithAggregatesFilter<"dailySummary"> | number | null
+  modeEngineTemp?: Prisma.FloatNullableWithAggregatesFilter<"dailySummary"> | number | null
+  totalDistance?: Prisma.FloatWithAggregatesFilter<"dailySummary"> | number
+  totalFuelUsed?: Prisma.FloatWithAggregatesFilter<"dailySummary"> | number
+  totalEngineHrs?: Prisma.FloatWithAggregatesFilter<"dailySummary"> | number
+  IdleTime?: Prisma.FloatWithAggregatesFilter<"dailySummary"> | number
+  RunningTime?: Prisma.FloatWithAggregatesFilter<"dailySummary"> | number
+  sampleCount?: Prisma.IntWithAggregatesFilter<"dailySummary"> | number
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"dailySummary"> | Date | string
 }
 
-export type dailysummaryCreateInput = {
+export type dailySummaryCreateInput = {
   id: string
   date: Date | string
   modeFuelLevel?: number | null
@@ -478,7 +478,7 @@ export type dailysummaryCreateInput = {
   vehicle: Prisma.vehicleCreateNestedOneWithoutDailysummaryInput
 }
 
-export type dailysummaryUncheckedCreateInput = {
+export type dailySummaryUncheckedCreateInput = {
   id: string
   vehicleId: string
   date: Date | string
@@ -498,7 +498,7 @@ export type dailysummaryUncheckedCreateInput = {
   updatedAt: Date | string
 }
 
-export type dailysummaryUpdateInput = {
+export type dailySummaryUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   modeFuelLevel?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
@@ -518,7 +518,7 @@ export type dailysummaryUpdateInput = {
   vehicle?: Prisma.vehicleUpdateOneRequiredWithoutDailysummaryNestedInput
 }
 
-export type dailysummaryUncheckedUpdateInput = {
+export type dailySummaryUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   vehicleId?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -538,7 +538,7 @@ export type dailysummaryUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type dailysummaryCreateManyInput = {
+export type dailySummaryCreateManyInput = {
   id: string
   vehicleId: string
   date: Date | string
@@ -558,7 +558,7 @@ export type dailysummaryCreateManyInput = {
   updatedAt: Date | string
 }
 
-export type dailysummaryUpdateManyMutationInput = {
+export type dailySummaryUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   modeFuelLevel?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
@@ -577,7 +577,7 @@ export type dailysummaryUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type dailysummaryUncheckedUpdateManyInput = {
+export type dailySummaryUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   vehicleId?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -597,18 +597,18 @@ export type dailysummaryUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type dailysummaryOrderByRelevanceInput = {
-  fields: Prisma.dailysummaryOrderByRelevanceFieldEnum | Prisma.dailysummaryOrderByRelevanceFieldEnum[]
+export type dailySummaryOrderByRelevanceInput = {
+  fields: Prisma.dailySummaryOrderByRelevanceFieldEnum | Prisma.dailySummaryOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type dailysummaryVehicleIdDateCompoundUniqueInput = {
+export type dailySummaryVehicleIdDateCompoundUniqueInput = {
   vehicleId: string
   date: Date | string
 }
 
-export type dailysummaryCountOrderByAggregateInput = {
+export type dailySummaryCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   vehicleId?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -628,7 +628,7 @@ export type dailysummaryCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type dailysummaryAvgOrderByAggregateInput = {
+export type dailySummaryAvgOrderByAggregateInput = {
   modeFuelLevel?: Prisma.SortOrder
   modeOilPressure?: Prisma.SortOrder
   modeBattVoltage?: Prisma.SortOrder
@@ -644,7 +644,7 @@ export type dailysummaryAvgOrderByAggregateInput = {
   sampleCount?: Prisma.SortOrder
 }
 
-export type dailysummaryMaxOrderByAggregateInput = {
+export type dailySummaryMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   vehicleId?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -664,7 +664,7 @@ export type dailysummaryMaxOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type dailysummaryMinOrderByAggregateInput = {
+export type dailySummaryMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   vehicleId?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -684,7 +684,7 @@ export type dailysummaryMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type dailysummarySumOrderByAggregateInput = {
+export type dailySummarySumOrderByAggregateInput = {
   modeFuelLevel?: Prisma.SortOrder
   modeOilPressure?: Prisma.SortOrder
   modeBattVoltage?: Prisma.SortOrder
@@ -700,13 +700,13 @@ export type dailysummarySumOrderByAggregateInput = {
   sampleCount?: Prisma.SortOrder
 }
 
-export type DailysummaryListRelationFilter = {
-  every?: Prisma.dailysummaryWhereInput
-  some?: Prisma.dailysummaryWhereInput
-  none?: Prisma.dailysummaryWhereInput
+export type DailySummaryListRelationFilter = {
+  every?: Prisma.dailySummaryWhereInput
+  some?: Prisma.dailySummaryWhereInput
+  none?: Prisma.dailySummaryWhereInput
 }
 
-export type dailysummaryOrderByRelationAggregateInput = {
+export type dailySummaryOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
@@ -726,49 +726,49 @@ export type FloatFieldUpdateOperationsInput = {
   divide?: number
 }
 
-export type dailysummaryCreateNestedManyWithoutVehicleInput = {
-  create?: Prisma.XOR<Prisma.dailysummaryCreateWithoutVehicleInput, Prisma.dailysummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailysummaryCreateWithoutVehicleInput[] | Prisma.dailysummaryUncheckedCreateWithoutVehicleInput[]
-  connectOrCreate?: Prisma.dailysummaryCreateOrConnectWithoutVehicleInput | Prisma.dailysummaryCreateOrConnectWithoutVehicleInput[]
-  createMany?: Prisma.dailysummaryCreateManyVehicleInputEnvelope
-  connect?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
+export type dailySummaryCreateNestedManyWithoutVehicleInput = {
+  create?: Prisma.XOR<Prisma.dailySummaryCreateWithoutVehicleInput, Prisma.dailySummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailySummaryCreateWithoutVehicleInput[] | Prisma.dailySummaryUncheckedCreateWithoutVehicleInput[]
+  connectOrCreate?: Prisma.dailySummaryCreateOrConnectWithoutVehicleInput | Prisma.dailySummaryCreateOrConnectWithoutVehicleInput[]
+  createMany?: Prisma.dailySummaryCreateManyVehicleInputEnvelope
+  connect?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
 }
 
-export type dailysummaryUncheckedCreateNestedManyWithoutVehicleInput = {
-  create?: Prisma.XOR<Prisma.dailysummaryCreateWithoutVehicleInput, Prisma.dailysummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailysummaryCreateWithoutVehicleInput[] | Prisma.dailysummaryUncheckedCreateWithoutVehicleInput[]
-  connectOrCreate?: Prisma.dailysummaryCreateOrConnectWithoutVehicleInput | Prisma.dailysummaryCreateOrConnectWithoutVehicleInput[]
-  createMany?: Prisma.dailysummaryCreateManyVehicleInputEnvelope
-  connect?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
+export type dailySummaryUncheckedCreateNestedManyWithoutVehicleInput = {
+  create?: Prisma.XOR<Prisma.dailySummaryCreateWithoutVehicleInput, Prisma.dailySummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailySummaryCreateWithoutVehicleInput[] | Prisma.dailySummaryUncheckedCreateWithoutVehicleInput[]
+  connectOrCreate?: Prisma.dailySummaryCreateOrConnectWithoutVehicleInput | Prisma.dailySummaryCreateOrConnectWithoutVehicleInput[]
+  createMany?: Prisma.dailySummaryCreateManyVehicleInputEnvelope
+  connect?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
 }
 
-export type dailysummaryUpdateManyWithoutVehicleNestedInput = {
-  create?: Prisma.XOR<Prisma.dailysummaryCreateWithoutVehicleInput, Prisma.dailysummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailysummaryCreateWithoutVehicleInput[] | Prisma.dailysummaryUncheckedCreateWithoutVehicleInput[]
-  connectOrCreate?: Prisma.dailysummaryCreateOrConnectWithoutVehicleInput | Prisma.dailysummaryCreateOrConnectWithoutVehicleInput[]
-  upsert?: Prisma.dailysummaryUpsertWithWhereUniqueWithoutVehicleInput | Prisma.dailysummaryUpsertWithWhereUniqueWithoutVehicleInput[]
-  createMany?: Prisma.dailysummaryCreateManyVehicleInputEnvelope
-  set?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  disconnect?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  delete?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  connect?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  update?: Prisma.dailysummaryUpdateWithWhereUniqueWithoutVehicleInput | Prisma.dailysummaryUpdateWithWhereUniqueWithoutVehicleInput[]
-  updateMany?: Prisma.dailysummaryUpdateManyWithWhereWithoutVehicleInput | Prisma.dailysummaryUpdateManyWithWhereWithoutVehicleInput[]
-  deleteMany?: Prisma.dailysummaryScalarWhereInput | Prisma.dailysummaryScalarWhereInput[]
+export type dailySummaryUpdateManyWithoutVehicleNestedInput = {
+  create?: Prisma.XOR<Prisma.dailySummaryCreateWithoutVehicleInput, Prisma.dailySummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailySummaryCreateWithoutVehicleInput[] | Prisma.dailySummaryUncheckedCreateWithoutVehicleInput[]
+  connectOrCreate?: Prisma.dailySummaryCreateOrConnectWithoutVehicleInput | Prisma.dailySummaryCreateOrConnectWithoutVehicleInput[]
+  upsert?: Prisma.dailySummaryUpsertWithWhereUniqueWithoutVehicleInput | Prisma.dailySummaryUpsertWithWhereUniqueWithoutVehicleInput[]
+  createMany?: Prisma.dailySummaryCreateManyVehicleInputEnvelope
+  set?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  disconnect?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  delete?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  connect?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  update?: Prisma.dailySummaryUpdateWithWhereUniqueWithoutVehicleInput | Prisma.dailySummaryUpdateWithWhereUniqueWithoutVehicleInput[]
+  updateMany?: Prisma.dailySummaryUpdateManyWithWhereWithoutVehicleInput | Prisma.dailySummaryUpdateManyWithWhereWithoutVehicleInput[]
+  deleteMany?: Prisma.dailySummaryScalarWhereInput | Prisma.dailySummaryScalarWhereInput[]
 }
 
-export type dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput = {
-  create?: Prisma.XOR<Prisma.dailysummaryCreateWithoutVehicleInput, Prisma.dailysummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailysummaryCreateWithoutVehicleInput[] | Prisma.dailysummaryUncheckedCreateWithoutVehicleInput[]
-  connectOrCreate?: Prisma.dailysummaryCreateOrConnectWithoutVehicleInput | Prisma.dailysummaryCreateOrConnectWithoutVehicleInput[]
-  upsert?: Prisma.dailysummaryUpsertWithWhereUniqueWithoutVehicleInput | Prisma.dailysummaryUpsertWithWhereUniqueWithoutVehicleInput[]
-  createMany?: Prisma.dailysummaryCreateManyVehicleInputEnvelope
-  set?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  disconnect?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  delete?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  connect?: Prisma.dailysummaryWhereUniqueInput | Prisma.dailysummaryWhereUniqueInput[]
-  update?: Prisma.dailysummaryUpdateWithWhereUniqueWithoutVehicleInput | Prisma.dailysummaryUpdateWithWhereUniqueWithoutVehicleInput[]
-  updateMany?: Prisma.dailysummaryUpdateManyWithWhereWithoutVehicleInput | Prisma.dailysummaryUpdateManyWithWhereWithoutVehicleInput[]
-  deleteMany?: Prisma.dailysummaryScalarWhereInput | Prisma.dailysummaryScalarWhereInput[]
+export type dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput = {
+  create?: Prisma.XOR<Prisma.dailySummaryCreateWithoutVehicleInput, Prisma.dailySummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailySummaryCreateWithoutVehicleInput[] | Prisma.dailySummaryUncheckedCreateWithoutVehicleInput[]
+  connectOrCreate?: Prisma.dailySummaryCreateOrConnectWithoutVehicleInput | Prisma.dailySummaryCreateOrConnectWithoutVehicleInput[]
+  upsert?: Prisma.dailySummaryUpsertWithWhereUniqueWithoutVehicleInput | Prisma.dailySummaryUpsertWithWhereUniqueWithoutVehicleInput[]
+  createMany?: Prisma.dailySummaryCreateManyVehicleInputEnvelope
+  set?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  disconnect?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  delete?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  connect?: Prisma.dailySummaryWhereUniqueInput | Prisma.dailySummaryWhereUniqueInput[]
+  update?: Prisma.dailySummaryUpdateWithWhereUniqueWithoutVehicleInput | Prisma.dailySummaryUpdateWithWhereUniqueWithoutVehicleInput[]
+  updateMany?: Prisma.dailySummaryUpdateManyWithWhereWithoutVehicleInput | Prisma.dailySummaryUpdateManyWithWhereWithoutVehicleInput[]
+  deleteMany?: Prisma.dailySummaryScalarWhereInput | Prisma.dailySummaryScalarWhereInput[]
 }
 
-export type dailysummaryCreateWithoutVehicleInput = {
+export type dailySummaryCreateWithoutVehicleInput = {
   id: string
   date: Date | string
   modeFuelLevel?: number | null
@@ -787,7 +787,7 @@ export type dailysummaryCreateWithoutVehicleInput = {
   updatedAt: Date | string
 }
 
-export type dailysummaryUncheckedCreateWithoutVehicleInput = {
+export type dailySummaryUncheckedCreateWithoutVehicleInput = {
   id: string
   date: Date | string
   modeFuelLevel?: number | null
@@ -806,56 +806,56 @@ export type dailysummaryUncheckedCreateWithoutVehicleInput = {
   updatedAt: Date | string
 }
 
-export type dailysummaryCreateOrConnectWithoutVehicleInput = {
-  where: Prisma.dailysummaryWhereUniqueInput
-  create: Prisma.XOR<Prisma.dailysummaryCreateWithoutVehicleInput, Prisma.dailysummaryUncheckedCreateWithoutVehicleInput>
+export type dailySummaryCreateOrConnectWithoutVehicleInput = {
+  where: Prisma.dailySummaryWhereUniqueInput
+  create: Prisma.XOR<Prisma.dailySummaryCreateWithoutVehicleInput, Prisma.dailySummaryUncheckedCreateWithoutVehicleInput>
 }
 
-export type dailysummaryCreateManyVehicleInputEnvelope = {
-  data: Prisma.dailysummaryCreateManyVehicleInput | Prisma.dailysummaryCreateManyVehicleInput[]
+export type dailySummaryCreateManyVehicleInputEnvelope = {
+  data: Prisma.dailySummaryCreateManyVehicleInput | Prisma.dailySummaryCreateManyVehicleInput[]
   skipDuplicates?: boolean
 }
 
-export type dailysummaryUpsertWithWhereUniqueWithoutVehicleInput = {
-  where: Prisma.dailysummaryWhereUniqueInput
-  update: Prisma.XOR<Prisma.dailysummaryUpdateWithoutVehicleInput, Prisma.dailysummaryUncheckedUpdateWithoutVehicleInput>
-  create: Prisma.XOR<Prisma.dailysummaryCreateWithoutVehicleInput, Prisma.dailysummaryUncheckedCreateWithoutVehicleInput>
+export type dailySummaryUpsertWithWhereUniqueWithoutVehicleInput = {
+  where: Prisma.dailySummaryWhereUniqueInput
+  update: Prisma.XOR<Prisma.dailySummaryUpdateWithoutVehicleInput, Prisma.dailySummaryUncheckedUpdateWithoutVehicleInput>
+  create: Prisma.XOR<Prisma.dailySummaryCreateWithoutVehicleInput, Prisma.dailySummaryUncheckedCreateWithoutVehicleInput>
 }
 
-export type dailysummaryUpdateWithWhereUniqueWithoutVehicleInput = {
-  where: Prisma.dailysummaryWhereUniqueInput
-  data: Prisma.XOR<Prisma.dailysummaryUpdateWithoutVehicleInput, Prisma.dailysummaryUncheckedUpdateWithoutVehicleInput>
+export type dailySummaryUpdateWithWhereUniqueWithoutVehicleInput = {
+  where: Prisma.dailySummaryWhereUniqueInput
+  data: Prisma.XOR<Prisma.dailySummaryUpdateWithoutVehicleInput, Prisma.dailySummaryUncheckedUpdateWithoutVehicleInput>
 }
 
-export type dailysummaryUpdateManyWithWhereWithoutVehicleInput = {
-  where: Prisma.dailysummaryScalarWhereInput
-  data: Prisma.XOR<Prisma.dailysummaryUpdateManyMutationInput, Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleInput>
+export type dailySummaryUpdateManyWithWhereWithoutVehicleInput = {
+  where: Prisma.dailySummaryScalarWhereInput
+  data: Prisma.XOR<Prisma.dailySummaryUpdateManyMutationInput, Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleInput>
 }
 
-export type dailysummaryScalarWhereInput = {
-  AND?: Prisma.dailysummaryScalarWhereInput | Prisma.dailysummaryScalarWhereInput[]
-  OR?: Prisma.dailysummaryScalarWhereInput[]
-  NOT?: Prisma.dailysummaryScalarWhereInput | Prisma.dailysummaryScalarWhereInput[]
-  id?: Prisma.StringFilter<"dailysummary"> | string
-  vehicleId?: Prisma.StringFilter<"dailysummary"> | string
-  date?: Prisma.DateTimeFilter<"dailysummary"> | Date | string
-  modeFuelLevel?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeOilPressure?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeBattVoltage?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineLoad?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeSpeed?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineRPM?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  modeEngineTemp?: Prisma.FloatNullableFilter<"dailysummary"> | number | null
-  totalDistance?: Prisma.FloatFilter<"dailysummary"> | number
-  totalFuelUsed?: Prisma.FloatFilter<"dailysummary"> | number
-  totalEngineHrs?: Prisma.FloatFilter<"dailysummary"> | number
-  IdleTime?: Prisma.FloatFilter<"dailysummary"> | number
-  RunningTime?: Prisma.FloatFilter<"dailysummary"> | number
-  sampleCount?: Prisma.IntFilter<"dailysummary"> | number
-  updatedAt?: Prisma.DateTimeFilter<"dailysummary"> | Date | string
+export type dailySummaryScalarWhereInput = {
+  AND?: Prisma.dailySummaryScalarWhereInput | Prisma.dailySummaryScalarWhereInput[]
+  OR?: Prisma.dailySummaryScalarWhereInput[]
+  NOT?: Prisma.dailySummaryScalarWhereInput | Prisma.dailySummaryScalarWhereInput[]
+  id?: Prisma.StringFilter<"dailySummary"> | string
+  vehicleId?: Prisma.StringFilter<"dailySummary"> | string
+  date?: Prisma.DateTimeFilter<"dailySummary"> | Date | string
+  modeFuelLevel?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeOilPressure?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeBattVoltage?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineLoad?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeSpeed?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineRPM?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  modeEngineTemp?: Prisma.FloatNullableFilter<"dailySummary"> | number | null
+  totalDistance?: Prisma.FloatFilter<"dailySummary"> | number
+  totalFuelUsed?: Prisma.FloatFilter<"dailySummary"> | number
+  totalEngineHrs?: Prisma.FloatFilter<"dailySummary"> | number
+  IdleTime?: Prisma.FloatFilter<"dailySummary"> | number
+  RunningTime?: Prisma.FloatFilter<"dailySummary"> | number
+  sampleCount?: Prisma.IntFilter<"dailySummary"> | number
+  updatedAt?: Prisma.DateTimeFilter<"dailySummary"> | Date | string
 }
 
-export type dailysummaryCreateManyVehicleInput = {
+export type dailySummaryCreateManyVehicleInput = {
   id: string
   date: Date | string
   modeFuelLevel?: number | null
@@ -874,7 +874,7 @@ export type dailysummaryCreateManyVehicleInput = {
   updatedAt: Date | string
 }
 
-export type dailysummaryUpdateWithoutVehicleInput = {
+export type dailySummaryUpdateWithoutVehicleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   modeFuelLevel?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
@@ -893,7 +893,7 @@ export type dailysummaryUpdateWithoutVehicleInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type dailysummaryUncheckedUpdateWithoutVehicleInput = {
+export type dailySummaryUncheckedUpdateWithoutVehicleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   modeFuelLevel?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
@@ -912,7 +912,7 @@ export type dailysummaryUncheckedUpdateWithoutVehicleInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type dailysummaryUncheckedUpdateManyWithoutVehicleInput = {
+export type dailySummaryUncheckedUpdateManyWithoutVehicleInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   modeFuelLevel?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
@@ -933,7 +933,7 @@ export type dailysummaryUncheckedUpdateManyWithoutVehicleInput = {
 
 
 
-export type dailysummarySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type dailySummarySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   vehicleId?: boolean
   date?: boolean
@@ -952,11 +952,11 @@ export type dailysummarySelect<ExtArgs extends runtime.Types.Extensions.Internal
   sampleCount?: boolean
   updatedAt?: boolean
   vehicle?: boolean | Prisma.vehicleDefaultArgs<ExtArgs>
-}, ExtArgs["result"]["dailysummary"]>
+}, ExtArgs["result"]["dailySummary"]>
 
 
 
-export type dailysummarySelectScalar = {
+export type dailySummarySelectScalar = {
   id?: boolean
   vehicleId?: boolean
   date?: boolean
@@ -976,13 +976,13 @@ export type dailysummarySelectScalar = {
   updatedAt?: boolean
 }
 
-export type dailysummaryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "vehicleId" | "date" | "modeFuelLevel" | "modeOilPressure" | "modeBattVoltage" | "modeEngineLoad" | "modeSpeed" | "modeEngineRPM" | "modeEngineTemp" | "totalDistance" | "totalFuelUsed" | "totalEngineHrs" | "IdleTime" | "RunningTime" | "sampleCount" | "updatedAt", ExtArgs["result"]["dailysummary"]>
-export type dailysummaryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "vehicleId" | "date" | "modeFuelLevel" | "modeOilPressure" | "modeBattVoltage" | "modeEngineLoad" | "modeSpeed" | "modeEngineRPM" | "modeEngineTemp" | "totalDistance" | "totalFuelUsed" | "totalEngineHrs" | "IdleTime" | "RunningTime" | "sampleCount" | "updatedAt", ExtArgs["result"]["dailySummary"]>
+export type dailySummaryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   vehicle?: boolean | Prisma.vehicleDefaultArgs<ExtArgs>
 }
 
-export type $dailysummaryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "dailysummary"
+export type $dailySummaryPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "dailySummary"
   objects: {
     vehicle: Prisma.$vehiclePayload<ExtArgs>
   }
@@ -1004,143 +1004,143 @@ export type $dailysummaryPayload<ExtArgs extends runtime.Types.Extensions.Intern
     RunningTime: number
     sampleCount: number
     updatedAt: Date
-  }, ExtArgs["result"]["dailysummary"]>
+  }, ExtArgs["result"]["dailySummary"]>
   composites: {}
 }
 
-export type dailysummaryGetPayload<S extends boolean | null | undefined | dailysummaryDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload, S>
+export type dailySummaryGetPayload<S extends boolean | null | undefined | dailySummaryDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload, S>
 
-export type dailysummaryCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<dailysummaryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-    select?: DailysummaryCountAggregateInputType | true
+export type dailySummaryCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<dailySummaryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+    select?: DailySummaryCountAggregateInputType | true
   }
 
-export interface dailysummaryDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['dailysummary'], meta: { name: 'dailysummary' } }
+export interface dailySummaryDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['dailySummary'], meta: { name: 'dailySummary' } }
   /**
-   * Find zero or one Dailysummary that matches the filter.
-   * @param {dailysummaryFindUniqueArgs} args - Arguments to find a Dailysummary
+   * Find zero or one DailySummary that matches the filter.
+   * @param {dailySummaryFindUniqueArgs} args - Arguments to find a DailySummary
    * @example
-   * // Get one Dailysummary
-   * const dailysummary = await prisma.dailysummary.findUnique({
+   * // Get one DailySummary
+   * const dailySummary = await prisma.dailySummary.findUnique({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUnique<T extends dailysummaryFindUniqueArgs>(args: Prisma.SelectSubset<T, dailysummaryFindUniqueArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends dailySummaryFindUniqueArgs>(args: Prisma.SelectSubset<T, dailySummaryFindUniqueArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find one Dailysummary that matches the filter or throw an error with `error.code='P2025'`
+   * Find one DailySummary that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {dailysummaryFindUniqueOrThrowArgs} args - Arguments to find a Dailysummary
+   * @param {dailySummaryFindUniqueOrThrowArgs} args - Arguments to find a DailySummary
    * @example
-   * // Get one Dailysummary
-   * const dailysummary = await prisma.dailysummary.findUniqueOrThrow({
+   * // Get one DailySummary
+   * const dailySummary = await prisma.dailySummary.findUniqueOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findUniqueOrThrow<T extends dailysummaryFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, dailysummaryFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends dailySummaryFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, dailySummaryFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first Dailysummary that matches the filter.
+   * Find the first DailySummary that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dailysummaryFindFirstArgs} args - Arguments to find a Dailysummary
+   * @param {dailySummaryFindFirstArgs} args - Arguments to find a DailySummary
    * @example
-   * // Get one Dailysummary
-   * const dailysummary = await prisma.dailysummary.findFirst({
+   * // Get one DailySummary
+   * const dailySummary = await prisma.dailySummary.findFirst({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirst<T extends dailysummaryFindFirstArgs>(args?: Prisma.SelectSubset<T, dailysummaryFindFirstArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends dailySummaryFindFirstArgs>(args?: Prisma.SelectSubset<T, dailySummaryFindFirstArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find the first Dailysummary that matches the filter or
+   * Find the first DailySummary that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dailysummaryFindFirstOrThrowArgs} args - Arguments to find a Dailysummary
+   * @param {dailySummaryFindFirstOrThrowArgs} args - Arguments to find a DailySummary
    * @example
-   * // Get one Dailysummary
-   * const dailysummary = await prisma.dailysummary.findFirstOrThrow({
+   * // Get one DailySummary
+   * const dailySummary = await prisma.dailySummary.findFirstOrThrow({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    */
-  findFirstOrThrow<T extends dailysummaryFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, dailysummaryFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends dailySummaryFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, dailySummaryFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Find zero or more Dailysummaries that matches the filter.
+   * Find zero or more DailySummaries that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dailysummaryFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {dailySummaryFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
-   * // Get all Dailysummaries
-   * const dailysummaries = await prisma.dailysummary.findMany()
+   * // Get all DailySummaries
+   * const dailySummaries = await prisma.dailySummary.findMany()
    * 
-   * // Get first 10 Dailysummaries
-   * const dailysummaries = await prisma.dailysummary.findMany({ take: 10 })
+   * // Get first 10 DailySummaries
+   * const dailySummaries = await prisma.dailySummary.findMany({ take: 10 })
    * 
    * // Only select the `id`
-   * const dailysummaryWithIdOnly = await prisma.dailysummary.findMany({ select: { id: true } })
+   * const dailySummaryWithIdOnly = await prisma.dailySummary.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends dailysummaryFindManyArgs>(args?: Prisma.SelectSubset<T, dailysummaryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends dailySummaryFindManyArgs>(args?: Prisma.SelectSubset<T, dailySummaryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
-   * Create a Dailysummary.
-   * @param {dailysummaryCreateArgs} args - Arguments to create a Dailysummary.
+   * Create a DailySummary.
+   * @param {dailySummaryCreateArgs} args - Arguments to create a DailySummary.
    * @example
-   * // Create one Dailysummary
-   * const Dailysummary = await prisma.dailysummary.create({
+   * // Create one DailySummary
+   * const DailySummary = await prisma.dailySummary.create({
    *   data: {
-   *     // ... data to create a Dailysummary
+   *     // ... data to create a DailySummary
    *   }
    * })
    * 
    */
-  create<T extends dailysummaryCreateArgs>(args: Prisma.SelectSubset<T, dailysummaryCreateArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends dailySummaryCreateArgs>(args: Prisma.SelectSubset<T, dailySummaryCreateArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Create many Dailysummaries.
-   * @param {dailysummaryCreateManyArgs} args - Arguments to create many Dailysummaries.
+   * Create many DailySummaries.
+   * @param {dailySummaryCreateManyArgs} args - Arguments to create many DailySummaries.
    * @example
-   * // Create many Dailysummaries
-   * const dailysummary = await prisma.dailysummary.createMany({
+   * // Create many DailySummaries
+   * const dailySummary = await prisma.dailySummary.createMany({
    *   data: [
    *     // ... provide data here
    *   ]
    * })
    *     
    */
-  createMany<T extends dailysummaryCreateManyArgs>(args?: Prisma.SelectSubset<T, dailysummaryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends dailySummaryCreateManyArgs>(args?: Prisma.SelectSubset<T, dailySummaryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Delete a Dailysummary.
-   * @param {dailysummaryDeleteArgs} args - Arguments to delete one Dailysummary.
+   * Delete a DailySummary.
+   * @param {dailySummaryDeleteArgs} args - Arguments to delete one DailySummary.
    * @example
-   * // Delete one Dailysummary
-   * const Dailysummary = await prisma.dailysummary.delete({
+   * // Delete one DailySummary
+   * const DailySummary = await prisma.dailySummary.delete({
    *   where: {
-   *     // ... filter to delete one Dailysummary
+   *     // ... filter to delete one DailySummary
    *   }
    * })
    * 
    */
-  delete<T extends dailysummaryDeleteArgs>(args: Prisma.SelectSubset<T, dailysummaryDeleteArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends dailySummaryDeleteArgs>(args: Prisma.SelectSubset<T, dailySummaryDeleteArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Update one Dailysummary.
-   * @param {dailysummaryUpdateArgs} args - Arguments to update one Dailysummary.
+   * Update one DailySummary.
+   * @param {dailySummaryUpdateArgs} args - Arguments to update one DailySummary.
    * @example
-   * // Update one Dailysummary
-   * const dailysummary = await prisma.dailysummary.update({
+   * // Update one DailySummary
+   * const dailySummary = await prisma.dailySummary.update({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1150,30 +1150,30 @@ export interface dailysummaryDelegate<ExtArgs extends runtime.Types.Extensions.I
    * })
    * 
    */
-  update<T extends dailysummaryUpdateArgs>(args: Prisma.SelectSubset<T, dailysummaryUpdateArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends dailySummaryUpdateArgs>(args: Prisma.SelectSubset<T, dailySummaryUpdateArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
-   * Delete zero or more Dailysummaries.
-   * @param {dailysummaryDeleteManyArgs} args - Arguments to filter Dailysummaries to delete.
+   * Delete zero or more DailySummaries.
+   * @param {dailySummaryDeleteManyArgs} args - Arguments to filter DailySummaries to delete.
    * @example
-   * // Delete a few Dailysummaries
-   * const { count } = await prisma.dailysummary.deleteMany({
+   * // Delete a few DailySummaries
+   * const { count } = await prisma.dailySummary.deleteMany({
    *   where: {
    *     // ... provide filter here
    *   }
    * })
    * 
    */
-  deleteMany<T extends dailysummaryDeleteManyArgs>(args?: Prisma.SelectSubset<T, dailysummaryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends dailySummaryDeleteManyArgs>(args?: Prisma.SelectSubset<T, dailySummaryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Update zero or more Dailysummaries.
+   * Update zero or more DailySummaries.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dailysummaryUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {dailySummaryUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
-   * // Update many Dailysummaries
-   * const dailysummary = await prisma.dailysummary.updateMany({
+   * // Update many DailySummaries
+   * const dailySummary = await prisma.dailySummary.updateMany({
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1183,56 +1183,56 @@ export interface dailysummaryDelegate<ExtArgs extends runtime.Types.Extensions.I
    * })
    * 
    */
-  updateMany<T extends dailysummaryUpdateManyArgs>(args: Prisma.SelectSubset<T, dailysummaryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends dailySummaryUpdateManyArgs>(args: Prisma.SelectSubset<T, dailySummaryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
-   * Create or update one Dailysummary.
-   * @param {dailysummaryUpsertArgs} args - Arguments to update or create a Dailysummary.
+   * Create or update one DailySummary.
+   * @param {dailySummaryUpsertArgs} args - Arguments to update or create a DailySummary.
    * @example
-   * // Update or create a Dailysummary
-   * const dailysummary = await prisma.dailysummary.upsert({
+   * // Update or create a DailySummary
+   * const dailySummary = await prisma.dailySummary.upsert({
    *   create: {
-   *     // ... data to create a Dailysummary
+   *     // ... data to create a DailySummary
    *   },
    *   update: {
    *     // ... in case it already exists, update
    *   },
    *   where: {
-   *     // ... the filter for the Dailysummary we want to update
+   *     // ... the filter for the DailySummary we want to update
    *   }
    * })
    */
-  upsert<T extends dailysummaryUpsertArgs>(args: Prisma.SelectSubset<T, dailysummaryUpsertArgs<ExtArgs>>): Prisma.Prisma__dailysummaryClient<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends dailySummaryUpsertArgs>(args: Prisma.SelectSubset<T, dailySummaryUpsertArgs<ExtArgs>>): Prisma.Prisma__dailySummaryClient<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
-   * Count the number of Dailysummaries.
+   * Count the number of DailySummaries.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dailysummaryCountArgs} args - Arguments to filter Dailysummaries to count.
+   * @param {dailySummaryCountArgs} args - Arguments to filter DailySummaries to count.
    * @example
-   * // Count the number of Dailysummaries
-   * const count = await prisma.dailysummary.count({
+   * // Count the number of DailySummaries
+   * const count = await prisma.dailySummary.count({
    *   where: {
-   *     // ... the filter for the Dailysummaries we want to count
+   *     // ... the filter for the DailySummaries we want to count
    *   }
    * })
   **/
-  count<T extends dailysummaryCountArgs>(
-    args?: Prisma.Subset<T, dailysummaryCountArgs>,
+  count<T extends dailySummaryCountArgs>(
+    args?: Prisma.Subset<T, dailySummaryCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
         ? number
-        : Prisma.GetScalarType<T['select'], DailysummaryCountAggregateOutputType>
+        : Prisma.GetScalarType<T['select'], DailySummaryCountAggregateOutputType>
       : number
   >
 
   /**
-   * Allows you to perform aggregations operations on a Dailysummary.
+   * Allows you to perform aggregations operations on a DailySummary.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DailysummaryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+   * @param {DailySummaryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
    * @example
    * // Ordered by age ascending
    * // Where email contains prisma.io
@@ -1252,13 +1252,13 @@ export interface dailysummaryDelegate<ExtArgs extends runtime.Types.Extensions.I
    *   take: 10,
    * })
   **/
-  aggregate<T extends DailysummaryAggregateArgs>(args: Prisma.Subset<T, DailysummaryAggregateArgs>): Prisma.PrismaPromise<GetDailysummaryAggregateType<T>>
+  aggregate<T extends DailySummaryAggregateArgs>(args: Prisma.Subset<T, DailySummaryAggregateArgs>): Prisma.PrismaPromise<GetDailySummaryAggregateType<T>>
 
   /**
-   * Group by Dailysummary.
+   * Group by DailySummary.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {dailysummaryGroupByArgs} args - Group by arguments.
+   * @param {dailySummaryGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1273,14 +1273,14 @@ export interface dailysummaryDelegate<ExtArgs extends runtime.Types.Extensions.I
    * 
   **/
   groupBy<
-    T extends dailysummaryGroupByArgs,
+    T extends dailySummaryGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: dailysummaryGroupByArgs['orderBy'] }
-      : { orderBy?: dailysummaryGroupByArgs['orderBy'] },
+      ? { orderBy: dailySummaryGroupByArgs['orderBy'] }
+      : { orderBy?: dailySummaryGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1329,20 +1329,20 @@ export interface dailysummaryDelegate<ExtArgs extends runtime.Types.Extensions.I
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, dailysummaryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDailysummaryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, dailySummaryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDailySummaryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the dailysummary model
+ * Fields of the dailySummary model
  */
-readonly fields: dailysummaryFieldRefs;
+readonly fields: dailySummaryFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for dailysummary.
+ * The delegate class that acts as a "Promise-like" for dailySummary.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__dailysummaryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__dailySummaryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   vehicle<T extends Prisma.vehicleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicleDefaultArgs<ExtArgs>>): Prisma.Prisma__vehicleClient<runtime.Types.Result.GetResult<Prisma.$vehiclePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
@@ -1371,387 +1371,387 @@ export interface Prisma__dailysummaryClient<T, Null = never, ExtArgs extends run
 
 
 /**
- * Fields of the dailysummary model
+ * Fields of the dailySummary model
  */
-export interface dailysummaryFieldRefs {
-  readonly id: Prisma.FieldRef<"dailysummary", 'String'>
-  readonly vehicleId: Prisma.FieldRef<"dailysummary", 'String'>
-  readonly date: Prisma.FieldRef<"dailysummary", 'DateTime'>
-  readonly modeFuelLevel: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly modeOilPressure: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly modeBattVoltage: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly modeEngineLoad: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly modeSpeed: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly modeEngineRPM: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly modeEngineTemp: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly totalDistance: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly totalFuelUsed: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly totalEngineHrs: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly IdleTime: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly RunningTime: Prisma.FieldRef<"dailysummary", 'Float'>
-  readonly sampleCount: Prisma.FieldRef<"dailysummary", 'Int'>
-  readonly updatedAt: Prisma.FieldRef<"dailysummary", 'DateTime'>
+export interface dailySummaryFieldRefs {
+  readonly id: Prisma.FieldRef<"dailySummary", 'String'>
+  readonly vehicleId: Prisma.FieldRef<"dailySummary", 'String'>
+  readonly date: Prisma.FieldRef<"dailySummary", 'DateTime'>
+  readonly modeFuelLevel: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly modeOilPressure: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly modeBattVoltage: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly modeEngineLoad: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly modeSpeed: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly modeEngineRPM: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly modeEngineTemp: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly totalDistance: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly totalFuelUsed: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly totalEngineHrs: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly IdleTime: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly RunningTime: Prisma.FieldRef<"dailySummary", 'Float'>
+  readonly sampleCount: Prisma.FieldRef<"dailySummary", 'Int'>
+  readonly updatedAt: Prisma.FieldRef<"dailySummary", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * dailysummary findUnique
+ * dailySummary findUnique
  */
-export type dailysummaryFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * Filter, which dailysummary to fetch.
+   * Filter, which dailySummary to fetch.
    */
-  where: Prisma.dailysummaryWhereUniqueInput
+  where: Prisma.dailySummaryWhereUniqueInput
 }
 
 /**
- * dailysummary findUniqueOrThrow
+ * dailySummary findUniqueOrThrow
  */
-export type dailysummaryFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * Filter, which dailysummary to fetch.
+   * Filter, which dailySummary to fetch.
    */
-  where: Prisma.dailysummaryWhereUniqueInput
+  where: Prisma.dailySummaryWhereUniqueInput
 }
 
 /**
- * dailysummary findFirst
+ * dailySummary findFirst
  */
-export type dailysummaryFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * Filter, which dailysummary to fetch.
+   * Filter, which dailySummary to fetch.
    */
-  where?: Prisma.dailysummaryWhereInput
+  where?: Prisma.dailySummaryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dailysummaries to fetch.
+   * Determine the order of dailySummaries to fetch.
    */
-  orderBy?: Prisma.dailysummaryOrderByWithRelationInput | Prisma.dailysummaryOrderByWithRelationInput[]
+  orderBy?: Prisma.dailySummaryOrderByWithRelationInput | Prisma.dailySummaryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for dailysummaries.
+   * Sets the position for searching for dailySummaries.
    */
-  cursor?: Prisma.dailysummaryWhereUniqueInput
+  cursor?: Prisma.dailySummaryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dailysummaries from the position of the cursor.
+   * Take `±n` dailySummaries from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dailysummaries.
+   * Skip the first `n` dailySummaries.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of dailysummaries.
+   * Filter by unique combinations of dailySummaries.
    */
-  distinct?: Prisma.DailysummaryScalarFieldEnum | Prisma.DailysummaryScalarFieldEnum[]
+  distinct?: Prisma.DailySummaryScalarFieldEnum | Prisma.DailySummaryScalarFieldEnum[]
 }
 
 /**
- * dailysummary findFirstOrThrow
+ * dailySummary findFirstOrThrow
  */
-export type dailysummaryFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * Filter, which dailysummary to fetch.
+   * Filter, which dailySummary to fetch.
    */
-  where?: Prisma.dailysummaryWhereInput
+  where?: Prisma.dailySummaryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dailysummaries to fetch.
+   * Determine the order of dailySummaries to fetch.
    */
-  orderBy?: Prisma.dailysummaryOrderByWithRelationInput | Prisma.dailysummaryOrderByWithRelationInput[]
+  orderBy?: Prisma.dailySummaryOrderByWithRelationInput | Prisma.dailySummaryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for dailysummaries.
+   * Sets the position for searching for dailySummaries.
    */
-  cursor?: Prisma.dailysummaryWhereUniqueInput
+  cursor?: Prisma.dailySummaryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dailysummaries from the position of the cursor.
+   * Take `±n` dailySummaries from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dailysummaries.
+   * Skip the first `n` dailySummaries.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of dailysummaries.
+   * Filter by unique combinations of dailySummaries.
    */
-  distinct?: Prisma.DailysummaryScalarFieldEnum | Prisma.DailysummaryScalarFieldEnum[]
+  distinct?: Prisma.DailySummaryScalarFieldEnum | Prisma.DailySummaryScalarFieldEnum[]
 }
 
 /**
- * dailysummary findMany
+ * dailySummary findMany
  */
-export type dailysummaryFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * Filter, which dailysummaries to fetch.
+   * Filter, which dailySummaries to fetch.
    */
-  where?: Prisma.dailysummaryWhereInput
+  where?: Prisma.dailySummaryWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of dailysummaries to fetch.
+   * Determine the order of dailySummaries to fetch.
    */
-  orderBy?: Prisma.dailysummaryOrderByWithRelationInput | Prisma.dailysummaryOrderByWithRelationInput[]
+  orderBy?: Prisma.dailySummaryOrderByWithRelationInput | Prisma.dailySummaryOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing dailysummaries.
+   * Sets the position for listing dailySummaries.
    */
-  cursor?: Prisma.dailysummaryWhereUniqueInput
+  cursor?: Prisma.dailySummaryWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` dailysummaries from the position of the cursor.
+   * Take `±n` dailySummaries from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` dailysummaries.
+   * Skip the first `n` dailySummaries.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of dailysummaries.
+   * Filter by unique combinations of dailySummaries.
    */
-  distinct?: Prisma.DailysummaryScalarFieldEnum | Prisma.DailysummaryScalarFieldEnum[]
+  distinct?: Prisma.DailySummaryScalarFieldEnum | Prisma.DailySummaryScalarFieldEnum[]
 }
 
 /**
- * dailysummary create
+ * dailySummary create
  */
-export type dailysummaryCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * The data needed to create a dailysummary.
+   * The data needed to create a dailySummary.
    */
-  data: Prisma.XOR<Prisma.dailysummaryCreateInput, Prisma.dailysummaryUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.dailySummaryCreateInput, Prisma.dailySummaryUncheckedCreateInput>
 }
 
 /**
- * dailysummary createMany
+ * dailySummary createMany
  */
-export type dailysummaryCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many dailysummaries.
+   * The data used to create many dailySummaries.
    */
-  data: Prisma.dailysummaryCreateManyInput | Prisma.dailysummaryCreateManyInput[]
+  data: Prisma.dailySummaryCreateManyInput | Prisma.dailySummaryCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * dailysummary update
+ * dailySummary update
  */
-export type dailysummaryUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * The data needed to update a dailysummary.
+   * The data needed to update a dailySummary.
    */
-  data: Prisma.XOR<Prisma.dailysummaryUpdateInput, Prisma.dailysummaryUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.dailySummaryUpdateInput, Prisma.dailySummaryUncheckedUpdateInput>
   /**
-   * Choose, which dailysummary to update.
+   * Choose, which dailySummary to update.
    */
-  where: Prisma.dailysummaryWhereUniqueInput
+  where: Prisma.dailySummaryWhereUniqueInput
 }
 
 /**
- * dailysummary updateMany
+ * dailySummary updateMany
  */
-export type dailysummaryUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update dailysummaries.
+   * The data used to update dailySummaries.
    */
-  data: Prisma.XOR<Prisma.dailysummaryUpdateManyMutationInput, Prisma.dailysummaryUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.dailySummaryUpdateManyMutationInput, Prisma.dailySummaryUncheckedUpdateManyInput>
   /**
-   * Filter which dailysummaries to update
+   * Filter which dailySummaries to update
    */
-  where?: Prisma.dailysummaryWhereInput
+  where?: Prisma.dailySummaryWhereInput
   /**
-   * Limit how many dailysummaries to update.
+   * Limit how many dailySummaries to update.
    */
   limit?: number
 }
 
 /**
- * dailysummary upsert
+ * dailySummary upsert
  */
-export type dailysummaryUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * The filter to search for the dailysummary to update in case it exists.
+   * The filter to search for the dailySummary to update in case it exists.
    */
-  where: Prisma.dailysummaryWhereUniqueInput
+  where: Prisma.dailySummaryWhereUniqueInput
   /**
-   * In case the dailysummary found by the `where` argument doesn't exist, create a new dailysummary with this data.
+   * In case the dailySummary found by the `where` argument doesn't exist, create a new dailySummary with this data.
    */
-  create: Prisma.XOR<Prisma.dailysummaryCreateInput, Prisma.dailysummaryUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.dailySummaryCreateInput, Prisma.dailySummaryUncheckedCreateInput>
   /**
-   * In case the dailysummary was found with the provided `where` argument, update it with this data.
+   * In case the dailySummary was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.dailysummaryUpdateInput, Prisma.dailysummaryUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.dailySummaryUpdateInput, Prisma.dailySummaryUncheckedUpdateInput>
 }
 
 /**
- * dailysummary delete
+ * dailySummary delete
  */
-export type dailysummaryDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
   /**
-   * Filter which dailysummary to delete.
+   * Filter which dailySummary to delete.
    */
-  where: Prisma.dailysummaryWhereUniqueInput
+  where: Prisma.dailySummaryWhereUniqueInput
 }
 
 /**
- * dailysummary deleteMany
+ * dailySummary deleteMany
  */
-export type dailysummaryDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which dailysummaries to delete
+   * Filter which dailySummaries to delete
    */
-  where?: Prisma.dailysummaryWhereInput
+  where?: Prisma.dailySummaryWhereInput
   /**
-   * Limit how many dailysummaries to delete.
+   * Limit how many dailySummaries to delete.
    */
   limit?: number
 }
 
 /**
- * dailysummary without action
+ * dailySummary without action
  */
-export type dailysummaryDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type dailySummaryDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
 }

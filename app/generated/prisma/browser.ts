@@ -28,10 +28,10 @@ export type alert = Prisma.alertModel
  */
 export type companies = Prisma.companiesModel
 /**
- * Model dailysummary
+ * Model dailySummary
  * 
  */
-export type dailysummary = Prisma.dailysummaryModel
+export type dailySummary = Prisma.dailySummaryModel
 /**
  * Model driver
  * 
@@ -58,10 +58,10 @@ export type status = Prisma.statusModel
  */
 export type trip = Prisma.tripModel
 /**
- * Model users
+ * Model user
  * 
  */
-export type users = Prisma.usersModel
+export type user = Prisma.userModel
 /**
  * Model vehicle
  * 

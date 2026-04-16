@@ -386,13 +386,13 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 export const ModelName = {
   alert: 'alert',
   companies: 'companies',
-  dailysummary: 'dailysummary',
+  dailySummary: 'dailySummary',
   driver: 'driver',
   maintenance: 'maintenance',
   maintenance_data: 'maintenance_data',
   status: 'status',
   trip: 'trip',
-  users: 'users',
+  user: 'user',
   vehicle: 'vehicle'
 } as const
 
@@ -409,7 +409,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "alert" | "companies" | "dailysummary" | "driver" | "maintenance" | "maintenance_data" | "status" | "trip" | "users" | "vehicle"
+    modelProps: "alert" | "companies" | "dailySummary" | "driver" | "maintenance" | "maintenance_data" | "status" | "trip" | "user" | "vehicle"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -545,69 +545,69 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    dailysummary: {
-      payload: Prisma.$dailysummaryPayload<ExtArgs>
-      fields: Prisma.dailysummaryFieldRefs
+    dailySummary: {
+      payload: Prisma.$dailySummaryPayload<ExtArgs>
+      fields: Prisma.dailySummaryFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.dailysummaryFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload> | null
+          args: Prisma.dailySummaryFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.dailysummaryFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload>
+          args: Prisma.dailySummaryFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload>
         }
         findFirst: {
-          args: Prisma.dailysummaryFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload> | null
+          args: Prisma.dailySummaryFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.dailysummaryFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload>
+          args: Prisma.dailySummaryFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload>
         }
         findMany: {
-          args: Prisma.dailysummaryFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload>[]
+          args: Prisma.dailySummaryFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload>[]
         }
         create: {
-          args: Prisma.dailysummaryCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload>
+          args: Prisma.dailySummaryCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload>
         }
         createMany: {
-          args: Prisma.dailysummaryCreateManyArgs<ExtArgs>
+          args: Prisma.dailySummaryCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         delete: {
-          args: Prisma.dailysummaryDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload>
+          args: Prisma.dailySummaryDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload>
         }
         update: {
-          args: Prisma.dailysummaryUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload>
+          args: Prisma.dailySummaryUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload>
         }
         deleteMany: {
-          args: Prisma.dailysummaryDeleteManyArgs<ExtArgs>
+          args: Prisma.dailySummaryDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.dailysummaryUpdateManyArgs<ExtArgs>
+          args: Prisma.dailySummaryUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         upsert: {
-          args: Prisma.dailysummaryUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailysummaryPayload>
+          args: Prisma.dailySummaryUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$dailySummaryPayload>
         }
         aggregate: {
-          args: Prisma.DailysummaryAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateDailysummary>
+          args: Prisma.DailySummaryAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDailySummary>
         }
         groupBy: {
-          args: Prisma.dailysummaryGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.DailysummaryGroupByOutputType>[]
+          args: Prisma.dailySummaryGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DailySummaryGroupByOutputType>[]
         }
         count: {
-          args: Prisma.dailysummaryCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.DailysummaryCountAggregateOutputType> | number
+          args: Prisma.dailySummaryCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DailySummaryCountAggregateOutputType> | number
         }
       }
     }
@@ -941,69 +941,69 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    users: {
-      payload: Prisma.$usersPayload<ExtArgs>
-      fields: Prisma.usersFieldRefs
+    user: {
+      payload: Prisma.$userPayload<ExtArgs>
+      fields: Prisma.userFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.usersFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload> | null
+          args: Prisma.userFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.usersFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload>
+          args: Prisma.userFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload>
         }
         findFirst: {
-          args: Prisma.usersFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload> | null
+          args: Prisma.userFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.usersFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload>
+          args: Prisma.userFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload>
         }
         findMany: {
-          args: Prisma.usersFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload>[]
+          args: Prisma.userFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload>[]
         }
         create: {
-          args: Prisma.usersCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload>
+          args: Prisma.userCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload>
         }
         createMany: {
-          args: Prisma.usersCreateManyArgs<ExtArgs>
+          args: Prisma.userCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         delete: {
-          args: Prisma.usersDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload>
+          args: Prisma.userDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload>
         }
         update: {
-          args: Prisma.usersUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload>
+          args: Prisma.userUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload>
         }
         deleteMany: {
-          args: Prisma.usersDeleteManyArgs<ExtArgs>
+          args: Prisma.userDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.usersUpdateManyArgs<ExtArgs>
+          args: Prisma.userUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         upsert: {
-          args: Prisma.usersUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$usersPayload>
+          args: Prisma.userUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$userPayload>
         }
         aggregate: {
-          args: Prisma.UsersAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateUsers>
+          args: Prisma.UserAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUser>
         }
         groupBy: {
-          args: Prisma.usersGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UsersGroupByOutputType>[]
+          args: Prisma.userGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserGroupByOutputType>[]
         }
         count: {
-          args: Prisma.usersCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.UsersCountAggregateOutputType> | number
+          args: Prisma.userCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserCountAggregateOutputType> | number
         }
       }
     }
@@ -1139,7 +1139,7 @@ export const CompaniesScalarFieldEnum = {
 export type CompaniesScalarFieldEnum = (typeof CompaniesScalarFieldEnum)[keyof typeof CompaniesScalarFieldEnum]
 
 
-export const DailysummaryScalarFieldEnum = {
+export const DailySummaryScalarFieldEnum = {
   id: 'id',
   vehicleId: 'vehicleId',
   date: 'date',
@@ -1159,7 +1159,7 @@ export const DailysummaryScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type DailysummaryScalarFieldEnum = (typeof DailysummaryScalarFieldEnum)[keyof typeof DailysummaryScalarFieldEnum]
+export type DailySummaryScalarFieldEnum = (typeof DailySummaryScalarFieldEnum)[keyof typeof DailySummaryScalarFieldEnum]
 
 
 export const DriverScalarFieldEnum = {
@@ -1235,7 +1235,7 @@ export const TripScalarFieldEnum = {
 export type TripScalarFieldEnum = (typeof TripScalarFieldEnum)[keyof typeof TripScalarFieldEnum]
 
 
-export const UsersScalarFieldEnum = {
+export const UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   email: 'email',
@@ -1246,7 +1246,7 @@ export const UsersScalarFieldEnum = {
   companyId: 'companyId'
 } as const
 
-export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
 export const VehicleScalarFieldEnum = {
@@ -1300,12 +1300,12 @@ export const companiesOrderByRelevanceFieldEnum = {
 export type companiesOrderByRelevanceFieldEnum = (typeof companiesOrderByRelevanceFieldEnum)[keyof typeof companiesOrderByRelevanceFieldEnum]
 
 
-export const dailysummaryOrderByRelevanceFieldEnum = {
+export const dailySummaryOrderByRelevanceFieldEnum = {
   id: 'id',
   vehicleId: 'vehicleId'
 } as const
 
-export type dailysummaryOrderByRelevanceFieldEnum = (typeof dailysummaryOrderByRelevanceFieldEnum)[keyof typeof dailysummaryOrderByRelevanceFieldEnum]
+export type dailySummaryOrderByRelevanceFieldEnum = (typeof dailySummaryOrderByRelevanceFieldEnum)[keyof typeof dailySummaryOrderByRelevanceFieldEnum]
 
 
 export const driverOrderByRelevanceFieldEnum = {
@@ -1353,13 +1353,13 @@ export const tripOrderByRelevanceFieldEnum = {
 export type tripOrderByRelevanceFieldEnum = (typeof tripOrderByRelevanceFieldEnum)[keyof typeof tripOrderByRelevanceFieldEnum]
 
 
-export const usersOrderByRelevanceFieldEnum = {
+export const userOrderByRelevanceFieldEnum = {
   name: 'name',
   email: 'email',
   password: 'password'
 } as const
 
-export type usersOrderByRelevanceFieldEnum = (typeof usersOrderByRelevanceFieldEnum)[keyof typeof usersOrderByRelevanceFieldEnum]
+export type userOrderByRelevanceFieldEnum = (typeof userOrderByRelevanceFieldEnum)[keyof typeof userOrderByRelevanceFieldEnum]
 
 
 export const vehicleOrderByRelevanceFieldEnum = {
@@ -1545,13 +1545,13 @@ export type PrismaClientOptions = ({
 export type GlobalOmitConfig = {
   alert?: Prisma.alertOmit
   companies?: Prisma.companiesOmit
-  dailysummary?: Prisma.dailysummaryOmit
+  dailySummary?: Prisma.dailySummaryOmit
   driver?: Prisma.driverOmit
   maintenance?: Prisma.maintenanceOmit
   maintenance_data?: Prisma.maintenance_dataOmit
   status?: Prisma.statusOmit
   trip?: Prisma.tripOmit
-  users?: Prisma.usersOmit
+  user?: Prisma.userOmit
   vehicle?: Prisma.vehicleOmit
 }
 

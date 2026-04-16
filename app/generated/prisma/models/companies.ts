@@ -233,7 +233,7 @@ export type companiesWhereInput = {
   createdAt?: Prisma.DateTimeFilter<"companies"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"companies"> | Date | string
   driver?: Prisma.DriverListRelationFilter
-  users?: Prisma.UsersListRelationFilter
+  users?: Prisma.UserListRelationFilter
   vehicle?: Prisma.VehicleListRelationFilter
 }
 
@@ -246,7 +246,7 @@ export type companiesOrderByWithRelationInput = {
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   driver?: Prisma.driverOrderByRelationAggregateInput
-  users?: Prisma.usersOrderByRelationAggregateInput
+  users?: Prisma.userOrderByRelationAggregateInput
   vehicle?: Prisma.vehicleOrderByRelationAggregateInput
   _relevance?: Prisma.companiesOrderByRelevanceInput
 }
@@ -263,7 +263,7 @@ export type companiesWhereUniqueInput = Prisma.AtLeast<{
   createdAt?: Prisma.DateTimeFilter<"companies"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"companies"> | Date | string
   driver?: Prisma.DriverListRelationFilter
-  users?: Prisma.UsersListRelationFilter
+  users?: Prisma.UserListRelationFilter
   vehicle?: Prisma.VehicleListRelationFilter
 }, "id">
 
@@ -303,7 +303,7 @@ export type companiesCreateInput = {
   createdAt?: Date | string
   updatedAt: Date | string
   driver?: Prisma.driverCreateNestedManyWithoutCompaniesInput
-  users?: Prisma.usersCreateNestedManyWithoutCompaniesInput
+  users?: Prisma.userCreateNestedManyWithoutCompaniesInput
   vehicle?: Prisma.vehicleCreateNestedManyWithoutCompaniesInput
 }
 
@@ -316,7 +316,7 @@ export type companiesUncheckedCreateInput = {
   createdAt?: Date | string
   updatedAt: Date | string
   driver?: Prisma.driverUncheckedCreateNestedManyWithoutCompaniesInput
-  users?: Prisma.usersUncheckedCreateNestedManyWithoutCompaniesInput
+  users?: Prisma.userUncheckedCreateNestedManyWithoutCompaniesInput
   vehicle?: Prisma.vehicleUncheckedCreateNestedManyWithoutCompaniesInput
 }
 
@@ -328,7 +328,7 @@ export type companiesUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   driver?: Prisma.driverUpdateManyWithoutCompaniesNestedInput
-  users?: Prisma.usersUpdateManyWithoutCompaniesNestedInput
+  users?: Prisma.userUpdateManyWithoutCompaniesNestedInput
   vehicle?: Prisma.vehicleUpdateManyWithoutCompaniesNestedInput
 }
 
@@ -341,7 +341,7 @@ export type companiesUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   driver?: Prisma.driverUncheckedUpdateManyWithoutCompaniesNestedInput
-  users?: Prisma.usersUncheckedUpdateManyWithoutCompaniesNestedInput
+  users?: Prisma.userUncheckedUpdateManyWithoutCompaniesNestedInput
   vehicle?: Prisma.vehicleUncheckedUpdateManyWithoutCompaniesNestedInput
 }
 
@@ -490,7 +490,7 @@ export type companiesCreateWithoutDriverInput = {
   address?: string | null
   createdAt?: Date | string
   updatedAt: Date | string
-  users?: Prisma.usersCreateNestedManyWithoutCompaniesInput
+  users?: Prisma.userCreateNestedManyWithoutCompaniesInput
   vehicle?: Prisma.vehicleCreateNestedManyWithoutCompaniesInput
 }
 
@@ -502,7 +502,7 @@ export type companiesUncheckedCreateWithoutDriverInput = {
   address?: string | null
   createdAt?: Date | string
   updatedAt: Date | string
-  users?: Prisma.usersUncheckedCreateNestedManyWithoutCompaniesInput
+  users?: Prisma.userUncheckedCreateNestedManyWithoutCompaniesInput
   vehicle?: Prisma.vehicleUncheckedCreateNestedManyWithoutCompaniesInput
 }
 
@@ -529,7 +529,7 @@ export type companiesUpdateWithoutDriverInput = {
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.usersUpdateManyWithoutCompaniesNestedInput
+  users?: Prisma.userUpdateManyWithoutCompaniesNestedInput
   vehicle?: Prisma.vehicleUpdateManyWithoutCompaniesNestedInput
 }
 
@@ -541,7 +541,7 @@ export type companiesUncheckedUpdateWithoutDriverInput = {
   address?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  users?: Prisma.usersUncheckedUpdateManyWithoutCompaniesNestedInput
+  users?: Prisma.userUncheckedUpdateManyWithoutCompaniesNestedInput
   vehicle?: Prisma.vehicleUncheckedUpdateManyWithoutCompaniesNestedInput
 }
 
@@ -615,7 +615,7 @@ export type companiesCreateWithoutVehicleInput = {
   createdAt?: Date | string
   updatedAt: Date | string
   driver?: Prisma.driverCreateNestedManyWithoutCompaniesInput
-  users?: Prisma.usersCreateNestedManyWithoutCompaniesInput
+  users?: Prisma.userCreateNestedManyWithoutCompaniesInput
 }
 
 export type companiesUncheckedCreateWithoutVehicleInput = {
@@ -627,7 +627,7 @@ export type companiesUncheckedCreateWithoutVehicleInput = {
   createdAt?: Date | string
   updatedAt: Date | string
   driver?: Prisma.driverUncheckedCreateNestedManyWithoutCompaniesInput
-  users?: Prisma.usersUncheckedCreateNestedManyWithoutCompaniesInput
+  users?: Prisma.userUncheckedCreateNestedManyWithoutCompaniesInput
 }
 
 export type companiesCreateOrConnectWithoutVehicleInput = {
@@ -654,7 +654,7 @@ export type companiesUpdateWithoutVehicleInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   driver?: Prisma.driverUpdateManyWithoutCompaniesNestedInput
-  users?: Prisma.usersUpdateManyWithoutCompaniesNestedInput
+  users?: Prisma.userUpdateManyWithoutCompaniesNestedInput
 }
 
 export type companiesUncheckedUpdateWithoutVehicleInput = {
@@ -666,7 +666,7 @@ export type companiesUncheckedUpdateWithoutVehicleInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   driver?: Prisma.driverUncheckedUpdateManyWithoutCompaniesNestedInput
-  users?: Prisma.usersUncheckedUpdateManyWithoutCompaniesNestedInput
+  users?: Prisma.userUncheckedUpdateManyWithoutCompaniesNestedInput
 }
 
 
@@ -707,7 +707,7 @@ export type CompaniesCountOutputTypeCountDriverArgs<ExtArgs extends runtime.Type
  * CompaniesCountOutputType without action
  */
 export type CompaniesCountOutputTypeCountUsersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.usersWhereInput
+  where?: Prisma.userWhereInput
 }
 
 /**
@@ -756,7 +756,7 @@ export type $companiesPayload<ExtArgs extends runtime.Types.Extensions.InternalA
   name: "companies"
   objects: {
     driver: Prisma.$driverPayload<ExtArgs>[]
-    users: Prisma.$usersPayload<ExtArgs>[]
+    users: Prisma.$userPayload<ExtArgs>[]
     vehicle: Prisma.$vehiclePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1108,7 +1108,7 @@ readonly fields: companiesFieldRefs;
 export interface Prisma__companiesClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   driver<T extends Prisma.companies$driverArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.companies$driverArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$driverPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  users<T extends Prisma.companies$usersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.companies$usersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  users<T extends Prisma.companies$usersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.companies$usersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   vehicle<T extends Prisma.companies$vehicleArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.companies$vehicleArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$vehiclePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1522,23 +1522,23 @@ export type companies$driverArgs<ExtArgs extends runtime.Types.Extensions.Intern
  */
 export type companies$usersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the users
+   * Select specific fields to fetch from the user
    */
-  select?: Prisma.usersSelect<ExtArgs> | null
+  select?: Prisma.userSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the users
+   * Omit specific fields from the user
    */
-  omit?: Prisma.usersOmit<ExtArgs> | null
+  omit?: Prisma.userOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.usersInclude<ExtArgs> | null
-  where?: Prisma.usersWhereInput
-  orderBy?: Prisma.usersOrderByWithRelationInput | Prisma.usersOrderByWithRelationInput[]
-  cursor?: Prisma.usersWhereUniqueInput
+  include?: Prisma.userInclude<ExtArgs> | null
+  where?: Prisma.userWhereInput
+  orderBy?: Prisma.userOrderByWithRelationInput | Prisma.userOrderByWithRelationInput[]
+  cursor?: Prisma.userWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.UsersScalarFieldEnum | Prisma.UsersScalarFieldEnum[]
+  distinct?: Prisma.UserScalarFieldEnum | Prisma.UserScalarFieldEnum[]
 }
 
 /**

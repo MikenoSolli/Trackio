@@ -257,14 +257,14 @@ export type vehicleWhereInput = {
   capacity?: Prisma.IntNullableFilter<"vehicle"> | number | null
   companyId?: Prisma.IntNullableFilter<"vehicle"> | number | null
   alert?: Prisma.AlertListRelationFilter
-  dailysummary?: Prisma.DailysummaryListRelationFilter
+  dailysummary?: Prisma.DailySummaryListRelationFilter
   maintenance?: Prisma.MaintenanceListRelationFilter
   maintenance_data?: Prisma.Maintenance_dataListRelationFilter
   status?: Prisma.StatusListRelationFilter
   trip?: Prisma.TripListRelationFilter
   companies?: Prisma.XOR<Prisma.CompaniesNullableScalarRelationFilter, Prisma.companiesWhereInput> | null
   driver?: Prisma.XOR<Prisma.DriverNullableScalarRelationFilter, Prisma.driverWhereInput> | null
-  users?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
+  users?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
 }
 
 export type vehicleOrderByWithRelationInput = {
@@ -278,14 +278,14 @@ export type vehicleOrderByWithRelationInput = {
   capacity?: Prisma.SortOrderInput | Prisma.SortOrder
   companyId?: Prisma.SortOrderInput | Prisma.SortOrder
   alert?: Prisma.alertOrderByRelationAggregateInput
-  dailysummary?: Prisma.dailysummaryOrderByRelationAggregateInput
+  dailysummary?: Prisma.dailySummaryOrderByRelationAggregateInput
   maintenance?: Prisma.maintenanceOrderByRelationAggregateInput
   maintenance_data?: Prisma.maintenance_dataOrderByRelationAggregateInput
   status?: Prisma.statusOrderByRelationAggregateInput
   trip?: Prisma.tripOrderByRelationAggregateInput
   companies?: Prisma.companiesOrderByWithRelationInput
   driver?: Prisma.driverOrderByWithRelationInput
-  users?: Prisma.usersOrderByWithRelationInput
+  users?: Prisma.userOrderByWithRelationInput
   _relevance?: Prisma.vehicleOrderByRelevanceInput
 }
 
@@ -303,14 +303,14 @@ export type vehicleWhereUniqueInput = Prisma.AtLeast<{
   capacity?: Prisma.IntNullableFilter<"vehicle"> | number | null
   companyId?: Prisma.IntNullableFilter<"vehicle"> | number | null
   alert?: Prisma.AlertListRelationFilter
-  dailysummary?: Prisma.DailysummaryListRelationFilter
+  dailysummary?: Prisma.DailySummaryListRelationFilter
   maintenance?: Prisma.MaintenanceListRelationFilter
   maintenance_data?: Prisma.Maintenance_dataListRelationFilter
   status?: Prisma.StatusListRelationFilter
   trip?: Prisma.TripListRelationFilter
   companies?: Prisma.XOR<Prisma.CompaniesNullableScalarRelationFilter, Prisma.companiesWhereInput> | null
   driver?: Prisma.XOR<Prisma.DriverNullableScalarRelationFilter, Prisma.driverWhereInput> | null
-  users?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
+  users?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.userWhereInput>
 }, "id" | "plateNumber" | "driverId">
 
 export type vehicleOrderByWithAggregationInput = {
@@ -353,14 +353,14 @@ export type vehicleCreateInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateInput = {
@@ -374,7 +374,7 @@ export type vehicleUncheckedCreateInput = {
   capacity?: number | null
   companyId?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
@@ -389,14 +389,14 @@ export type vehicleUpdateInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateInput = {
@@ -410,7 +410,7 @@ export type vehicleUncheckedUpdateInput = {
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
@@ -735,14 +735,14 @@ export type vehicleCreateWithoutAlertInput = {
   make?: string | null
   model?: string | null
   capacity?: number | null
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutAlertInput = {
@@ -755,7 +755,7 @@ export type vehicleUncheckedCreateWithoutAlertInput = {
   ownerId: number
   capacity?: number | null
   companyId?: number | null
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
@@ -785,14 +785,14 @@ export type vehicleUpdateWithoutAlertInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutAlertInput = {
@@ -805,7 +805,7 @@ export type vehicleUncheckedUpdateWithoutAlertInput = {
   ownerId?: Prisma.IntFieldUpdateOperationsInput | number
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
@@ -820,13 +820,13 @@ export type vehicleCreateWithoutCompaniesInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutCompaniesInput = {
@@ -839,7 +839,7 @@ export type vehicleUncheckedCreateWithoutCompaniesInput = {
   ownerId: number
   capacity?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
@@ -901,7 +901,7 @@ export type vehicleCreateWithoutDailysummaryInput = {
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutDailysummaryInput = {
@@ -951,7 +951,7 @@ export type vehicleUpdateWithoutDailysummaryInput = {
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutDailysummaryInput = {
@@ -979,13 +979,13 @@ export type vehicleCreateWithoutDriverInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutDriverInput = {
@@ -998,7 +998,7 @@ export type vehicleUncheckedCreateWithoutDriverInput = {
   capacity?: number | null
   companyId?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
@@ -1029,13 +1029,13 @@ export type vehicleUpdateWithoutDriverInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutDriverInput = {
@@ -1048,7 +1048,7 @@ export type vehicleUncheckedUpdateWithoutDriverInput = {
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1063,13 +1063,13 @@ export type vehicleCreateWithoutMaintenanceInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutMaintenanceInput = {
@@ -1083,7 +1083,7 @@ export type vehicleUncheckedCreateWithoutMaintenanceInput = {
   capacity?: number | null
   companyId?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripUncheckedCreateNestedManyWithoutVehicleInput
@@ -1113,13 +1113,13 @@ export type vehicleUpdateWithoutMaintenanceInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutMaintenanceInput = {
@@ -1133,7 +1133,7 @@ export type vehicleUncheckedUpdateWithoutMaintenanceInput = {
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1147,13 +1147,13 @@ export type vehicleCreateWithoutMaintenance_dataInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutMaintenance_dataInput = {
@@ -1167,7 +1167,7 @@ export type vehicleUncheckedCreateWithoutMaintenance_dataInput = {
   capacity?: number | null
   companyId?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripUncheckedCreateNestedManyWithoutVehicleInput
@@ -1197,13 +1197,13 @@ export type vehicleUpdateWithoutMaintenance_dataInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutMaintenance_dataInput = {
@@ -1217,7 +1217,7 @@ export type vehicleUncheckedUpdateWithoutMaintenance_dataInput = {
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1231,13 +1231,13 @@ export type vehicleCreateWithoutStatusInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutStatusInput = {
@@ -1251,7 +1251,7 @@ export type vehicleUncheckedCreateWithoutStatusInput = {
   capacity?: number | null
   companyId?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   trip?: Prisma.tripUncheckedCreateNestedManyWithoutVehicleInput
@@ -1281,13 +1281,13 @@ export type vehicleUpdateWithoutStatusInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutStatusInput = {
@@ -1301,7 +1301,7 @@ export type vehicleUncheckedUpdateWithoutStatusInput = {
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1315,13 +1315,13 @@ export type vehicleCreateWithoutTripInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
   companies?: Prisma.companiesCreateNestedOneWithoutVehicleInput
   driver?: Prisma.driverCreateNestedOneWithoutVehicleInput
-  users: Prisma.usersCreateNestedOneWithoutVehicleInput
+  users: Prisma.userCreateNestedOneWithoutVehicleInput
 }
 
 export type vehicleUncheckedCreateWithoutTripInput = {
@@ -1335,7 +1335,7 @@ export type vehicleUncheckedCreateWithoutTripInput = {
   capacity?: number | null
   companyId?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
@@ -1365,13 +1365,13 @@ export type vehicleUpdateWithoutTripInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
   companies?: Prisma.companiesUpdateOneWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutTripInput = {
@@ -1385,7 +1385,7 @@ export type vehicleUncheckedUpdateWithoutTripInput = {
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1399,7 +1399,7 @@ export type vehicleCreateWithoutUsersInput = {
   model?: string | null
   capacity?: number | null
   alert?: Prisma.alertCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusCreateNestedManyWithoutVehicleInput
@@ -1418,7 +1418,7 @@ export type vehicleUncheckedCreateWithoutUsersInput = {
   capacity?: number | null
   companyId?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
-  dailysummary?: Prisma.dailysummaryUncheckedCreateNestedManyWithoutVehicleInput
+  dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
   status?: Prisma.statusUncheckedCreateNestedManyWithoutVehicleInput
@@ -1470,13 +1470,13 @@ export type vehicleUpdateWithoutCompaniesInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
   trip?: Prisma.tripUpdateManyWithoutVehicleNestedInput
   driver?: Prisma.driverUpdateOneWithoutVehicleNestedInput
-  users?: Prisma.usersUpdateOneRequiredWithoutVehicleNestedInput
+  users?: Prisma.userUpdateOneRequiredWithoutVehicleNestedInput
 }
 
 export type vehicleUncheckedUpdateWithoutCompaniesInput = {
@@ -1489,7 +1489,7 @@ export type vehicleUncheckedUpdateWithoutCompaniesInput = {
   ownerId?: Prisma.IntFieldUpdateOperationsInput | number
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1526,7 +1526,7 @@ export type vehicleUpdateWithoutUsersInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUpdateManyWithoutVehicleNestedInput
@@ -1545,7 +1545,7 @@ export type vehicleUncheckedUpdateWithoutUsersInput = {
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
-  dailysummary?: Prisma.dailysummaryUncheckedUpdateManyWithoutVehicleNestedInput
+  dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
   status?: Prisma.statusUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1607,7 +1607,7 @@ export type VehicleCountOutputTypeCountAlertArgs<ExtArgs extends runtime.Types.E
  * VehicleCountOutputType without action
  */
 export type VehicleCountOutputTypeCountDailysummaryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.dailysummaryWhereInput
+  where?: Prisma.dailySummaryWhereInput
 }
 
 /**
@@ -1657,7 +1657,7 @@ export type vehicleSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   trip?: boolean | Prisma.vehicle$tripArgs<ExtArgs>
   companies?: boolean | Prisma.vehicle$companiesArgs<ExtArgs>
   driver?: boolean | Prisma.vehicle$driverArgs<ExtArgs>
-  users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
+  users?: boolean | Prisma.userDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.VehicleCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["vehicle"]>
 
@@ -1685,7 +1685,7 @@ export type vehicleInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   trip?: boolean | Prisma.vehicle$tripArgs<ExtArgs>
   companies?: boolean | Prisma.vehicle$companiesArgs<ExtArgs>
   driver?: boolean | Prisma.vehicle$driverArgs<ExtArgs>
-  users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
+  users?: boolean | Prisma.userDefaultArgs<ExtArgs>
   _count?: boolean | Prisma.VehicleCountOutputTypeDefaultArgs<ExtArgs>
 }
 
@@ -1693,14 +1693,14 @@ export type $vehiclePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
   name: "vehicle"
   objects: {
     alert: Prisma.$alertPayload<ExtArgs>[]
-    dailysummary: Prisma.$dailysummaryPayload<ExtArgs>[]
+    dailysummary: Prisma.$dailySummaryPayload<ExtArgs>[]
     maintenance: Prisma.$maintenancePayload<ExtArgs>[]
     maintenance_data: Prisma.$maintenance_dataPayload<ExtArgs>[]
     status: Prisma.$statusPayload<ExtArgs>[]
     trip: Prisma.$tripPayload<ExtArgs>[]
     companies: Prisma.$companiesPayload<ExtArgs> | null
     driver: Prisma.$driverPayload<ExtArgs> | null
-    users: Prisma.$usersPayload<ExtArgs>
+    users: Prisma.$userPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -2053,14 +2053,14 @@ readonly fields: vehicleFieldRefs;
 export interface Prisma__vehicleClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   alert<T extends Prisma.vehicle$alertArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$alertArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$alertPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  dailysummary<T extends Prisma.vehicle$dailysummaryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$dailysummaryArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dailysummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  dailysummary<T extends Prisma.vehicle$dailysummaryArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$dailysummaryArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$dailySummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   maintenance<T extends Prisma.vehicle$maintenanceArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$maintenanceArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$maintenancePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   maintenance_data<T extends Prisma.vehicle$maintenance_dataArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$maintenance_dataArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$maintenance_dataPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   status<T extends Prisma.vehicle$statusArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$statusArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$statusPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   trip<T extends Prisma.vehicle$tripArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$tripArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$tripPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   companies<T extends Prisma.vehicle$companiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$companiesArgs<ExtArgs>>): Prisma.Prisma__companiesClient<runtime.Types.Result.GetResult<Prisma.$companiesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   driver<T extends Prisma.vehicle$driverArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.vehicle$driverArgs<ExtArgs>>): Prisma.Prisma__driverClient<runtime.Types.Result.GetResult<Prisma.$driverPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  users<T extends Prisma.usersDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.usersDefaultArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  users<T extends Prisma.userDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.userDefaultArgs<ExtArgs>>): Prisma.Prisma__userClient<runtime.Types.Result.GetResult<Prisma.$userPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2475,23 +2475,23 @@ export type vehicle$alertArgs<ExtArgs extends runtime.Types.Extensions.InternalA
  */
 export type vehicle$dailysummaryArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the dailysummary
+   * Select specific fields to fetch from the dailySummary
    */
-  select?: Prisma.dailysummarySelect<ExtArgs> | null
+  select?: Prisma.dailySummarySelect<ExtArgs> | null
   /**
-   * Omit specific fields from the dailysummary
+   * Omit specific fields from the dailySummary
    */
-  omit?: Prisma.dailysummaryOmit<ExtArgs> | null
+  omit?: Prisma.dailySummaryOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.dailysummaryInclude<ExtArgs> | null
-  where?: Prisma.dailysummaryWhereInput
-  orderBy?: Prisma.dailysummaryOrderByWithRelationInput | Prisma.dailysummaryOrderByWithRelationInput[]
-  cursor?: Prisma.dailysummaryWhereUniqueInput
+  include?: Prisma.dailySummaryInclude<ExtArgs> | null
+  where?: Prisma.dailySummaryWhereInput
+  orderBy?: Prisma.dailySummaryOrderByWithRelationInput | Prisma.dailySummaryOrderByWithRelationInput[]
+  cursor?: Prisma.dailySummaryWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.DailysummaryScalarFieldEnum | Prisma.DailysummaryScalarFieldEnum[]
+  distinct?: Prisma.DailySummaryScalarFieldEnum | Prisma.DailySummaryScalarFieldEnum[]
 }
 
 /**

@@ -8,11 +8,13 @@ import { Toaster } from "sonner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,10 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-       <section>      
-         <Navbar />
-        {children}
-        <Toaster position="bottom-right" expand={true} richColors />
-      </section>
+    <div className={`${geistSans.variable} ${geistMono.variable}`}>
+      <Navbar />
+      {children}
+      <Toaster position="bottom-right" expand={true} richColors />
+    </div>
   );
 }

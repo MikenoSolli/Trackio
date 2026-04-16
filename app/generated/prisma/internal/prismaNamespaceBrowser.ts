@@ -53,13 +53,13 @@ export const AnyNull = runtime.AnyNull
 export const ModelName = {
   alert: 'alert',
   companies: 'companies',
-  dailysummary: 'dailysummary',
+  dailySummary: 'dailySummary',
   driver: 'driver',
   maintenance: 'maintenance',
   maintenance_data: 'maintenance_data',
   status: 'status',
   trip: 'trip',
-  users: 'users',
+  user: 'user',
   vehicle: 'vehicle'
 } as const
 
@@ -106,7 +106,7 @@ export const CompaniesScalarFieldEnum = {
 export type CompaniesScalarFieldEnum = (typeof CompaniesScalarFieldEnum)[keyof typeof CompaniesScalarFieldEnum]
 
 
-export const DailysummaryScalarFieldEnum = {
+export const DailySummaryScalarFieldEnum = {
   id: 'id',
   vehicleId: 'vehicleId',
   date: 'date',
@@ -126,7 +126,7 @@ export const DailysummaryScalarFieldEnum = {
   updatedAt: 'updatedAt'
 } as const
 
-export type DailysummaryScalarFieldEnum = (typeof DailysummaryScalarFieldEnum)[keyof typeof DailysummaryScalarFieldEnum]
+export type DailySummaryScalarFieldEnum = (typeof DailySummaryScalarFieldEnum)[keyof typeof DailySummaryScalarFieldEnum]
 
 
 export const DriverScalarFieldEnum = {
@@ -202,7 +202,7 @@ export const TripScalarFieldEnum = {
 export type TripScalarFieldEnum = (typeof TripScalarFieldEnum)[keyof typeof TripScalarFieldEnum]
 
 
-export const UsersScalarFieldEnum = {
+export const UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
   email: 'email',
@@ -213,7 +213,7 @@ export const UsersScalarFieldEnum = {
   companyId: 'companyId'
 } as const
 
-export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
+export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
 export const VehicleScalarFieldEnum = {
@@ -267,12 +267,12 @@ export const companiesOrderByRelevanceFieldEnum = {
 export type companiesOrderByRelevanceFieldEnum = (typeof companiesOrderByRelevanceFieldEnum)[keyof typeof companiesOrderByRelevanceFieldEnum]
 
 
-export const dailysummaryOrderByRelevanceFieldEnum = {
+export const dailySummaryOrderByRelevanceFieldEnum = {
   id: 'id',
   vehicleId: 'vehicleId'
 } as const
 
-export type dailysummaryOrderByRelevanceFieldEnum = (typeof dailysummaryOrderByRelevanceFieldEnum)[keyof typeof dailysummaryOrderByRelevanceFieldEnum]
+export type dailySummaryOrderByRelevanceFieldEnum = (typeof dailySummaryOrderByRelevanceFieldEnum)[keyof typeof dailySummaryOrderByRelevanceFieldEnum]
 
 
 export const driverOrderByRelevanceFieldEnum = {
@@ -320,13 +320,13 @@ export const tripOrderByRelevanceFieldEnum = {
 export type tripOrderByRelevanceFieldEnum = (typeof tripOrderByRelevanceFieldEnum)[keyof typeof tripOrderByRelevanceFieldEnum]
 
 
-export const usersOrderByRelevanceFieldEnum = {
+export const userOrderByRelevanceFieldEnum = {
   name: 'name',
   email: 'email',
   password: 'password'
 } as const
 
-export type usersOrderByRelevanceFieldEnum = (typeof usersOrderByRelevanceFieldEnum)[keyof typeof usersOrderByRelevanceFieldEnum]
+export type userOrderByRelevanceFieldEnum = (typeof userOrderByRelevanceFieldEnum)[keyof typeof userOrderByRelevanceFieldEnum]
 
 
 export const vehicleOrderByRelevanceFieldEnum = {
