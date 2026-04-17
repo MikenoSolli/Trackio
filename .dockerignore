@@ -38,4 +38,5 @@ next-env.d.ts
 
 # Prisma
 prisma/migrations
-generated
+# generated - but allow app/generated/prisma for the client
+!app/generated/prisma
