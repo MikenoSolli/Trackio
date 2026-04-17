@@ -9,8 +9,7 @@ on:
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  IMAGE_TAG: ${{ github.sha }}
+  IMAGE_NAME: mikenosolli/trackio
 
 jobs:
   build-and-push:
@@ -67,12 +66,12 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/apps/trackio
-            
+
             # Pull the latest image from GHCR
             docker compose pull trackio
-            
+
             # Restart the app container with the new image
             docker compose up -d trackio
-            
+
             # Optional: Clean up old unused images to save disk space
             docker image prune -f

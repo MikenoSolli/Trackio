@@ -1,6 +1,6 @@
 services:
   trackio:
-    image: ghcr.io/mikenosolli/trackio:latest
+    image: ghcr.io/${IMAGE_NAME:-mikenosolli/trackio}:latest
     container_name: trackio
     restart: unless-stopped
     ports:
