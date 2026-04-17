@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
     const session = await getSession();
     console.log('Session:', session);
     console.log('Session userId type:', typeof session?.userId, session?.userId);
-    const userId = Number(session?.userId); 
+    const userId = session?.userId as string; 
 
     if (!userId) {
       console.log('No userId found in session');

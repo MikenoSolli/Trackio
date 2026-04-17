@@ -24,8 +24,9 @@ export async function POST(request: Request) {
       data: {
         name,
         email,
-        password:hashedPassword, // Note: In a real app, hash this with bcrypt first!
+        password:hashedPassword,
         role: role || 'USER', 
+        updatedAt: new Date(),
       },
     });
 

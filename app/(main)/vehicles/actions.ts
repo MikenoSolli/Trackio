@@ -32,7 +32,7 @@ export async function addVehicle(formData: FormData) {
       model,
       plateNumber,
       Type: type,
-      ownerId: Number(ownerId),
+      ownerId: ownerId as string,
     },
   });
 
@@ -95,10 +95,11 @@ export async function getVehicleHistory(vehicleId: string, limit: number = 100) 
 
 export async function getAllVehiclesDisplayData() {
   try{
-    const session = await getSession();
-    const ownerId = Number(session?.userId); 
-    const vehicles = await prisma.vehicle.findMany({
-    where: { ownerId: ownerId },
+const session = await getSession();
+  const ownerId = session?.userId; 
+  if (!ownerId) return [];
+  const vehicles = await prisma.vehicle.findMany({
+  where: { ownerId: ownerId },
     include: {
       status: {
         orderBy: { lastUpdate: 'desc' },

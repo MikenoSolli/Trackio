@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 export async function GET(req: NextRequest) {
   try {
     const session = await getSession();
-    const userId = Number(session?.userId);
+    const userId = session?.userId as string;
     
     if (!userId) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

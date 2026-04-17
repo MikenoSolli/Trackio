@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
     console.log('Tractor Report - Type:', type, 'Range:', range, 'Date:', dateParam, 'Parsed:', targetDate);
 
     const session = await getSession();
-    const userId = Number(session?.userId); 
+    const userId = session?.userId as string; 
     console.log('UserID:', userId);
 
     if (!userId) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

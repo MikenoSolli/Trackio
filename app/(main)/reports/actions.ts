@@ -9,7 +9,7 @@ export async function addVehicle(formData: FormData) {
   const model = formData.get("model") as string;
   const plateNumber = formData.get("plateNumber") as string;
   const type = formData.get("type") as any;
-  const ownerId = 1; // You would get this from getSession() later
+  const ownerId = "1"; // You would get this from getSession() later
 
   await prisma.vehicle.create({
     data: {
@@ -27,7 +27,7 @@ export async function addVehicle(formData: FormData) {
 export async function getAllVehiclesDisplayData() {
   try{
     const vehicles = await prisma.vehicle.findMany({
-    where: { ownerId: 4 },
+    where: { ownerId: "4" },
     include: {
       status: {
         orderBy: { lastUpdate: 'desc' },

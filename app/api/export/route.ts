@@ -1,13 +1,11 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 export async function GET() {
   try {
     const data = {
-      users: await prisma.user.findMany(),
-      companies: await prisma.company.findMany(),
+      user: await prisma.user.findMany(),
+      companies: await prisma.companies.findMany(),
       drivers: await prisma.driver.findMany(),
       vehicles: await prisma.vehicle.findMany(),
       alerts: await prisma.alert.findMany(),

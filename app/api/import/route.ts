@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/prisma";
 
 export async function POST(request: Request) {
   try {
@@ -10,7 +8,7 @@ export async function POST(request: Request) {
     await prisma.$transaction(async (tx) => {
       if (data.companies?.length) {
         for (const c of data.companies) {
-          await tx.company.upsert({
+          await tx.companies.upsert({
             where: { id: c.id },
             update: c,
             create: c,
