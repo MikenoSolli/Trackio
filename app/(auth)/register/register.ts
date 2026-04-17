@@ -35,6 +35,7 @@ export async function registerUser(formData: FormData): Promise<FormState | void
         name,
         email,
         password: hashedPassword,
+        updatedAt: new Date(),
       },
     });
 

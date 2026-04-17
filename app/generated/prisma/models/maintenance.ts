@@ -278,7 +278,7 @@ export type maintenanceScalarWhereWithAggregatesInput = {
 }
 
 export type maintenanceCreateInput = {
-  id: string
+  id?: string
   serviceDate: Date | string
   nextService: Date | string
   description: string
@@ -287,7 +287,7 @@ export type maintenanceCreateInput = {
 }
 
 export type maintenanceUncheckedCreateInput = {
-  id: string
+  id?: string
   vehicleId: string
   serviceDate: Date | string
   nextService: Date | string
@@ -314,7 +314,7 @@ export type maintenanceUncheckedUpdateInput = {
 }
 
 export type maintenanceCreateManyInput = {
-  id: string
+  id?: string
   vehicleId: string
   serviceDate: Date | string
   nextService: Date | string
@@ -433,7 +433,7 @@ export type maintenanceUncheckedUpdateManyWithoutVehicleNestedInput = {
 }
 
 export type maintenanceCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   serviceDate: Date | string
   nextService: Date | string
   description: string
@@ -441,7 +441,7 @@ export type maintenanceCreateWithoutVehicleInput = {
 }
 
 export type maintenanceUncheckedCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   serviceDate: Date | string
   nextService: Date | string
   description: string
@@ -487,7 +487,7 @@ export type maintenanceScalarWhereInput = {
 }
 
 export type maintenanceCreateManyVehicleInput = {
-  id: string
+  id?: string
   serviceDate: Date | string
   nextService: Date | string
   description: string

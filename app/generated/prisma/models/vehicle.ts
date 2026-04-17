@@ -27,15 +27,11 @@ export type AggregateVehicle = {
 }
 
 export type VehicleAvgAggregateOutputType = {
-  ownerId: number | null
   capacity: number | null
-  companyId: number | null
 }
 
 export type VehicleSumAggregateOutputType = {
-  ownerId: number | null
   capacity: number | null
-  companyId: number | null
 }
 
 export type VehicleMinAggregateOutputType = {
@@ -45,9 +41,9 @@ export type VehicleMinAggregateOutputType = {
   make: string | null
   model: string | null
   driverId: string | null
-  ownerId: number | null
+  ownerId: string | null
   capacity: number | null
-  companyId: number | null
+  companyId: string | null
 }
 
 export type VehicleMaxAggregateOutputType = {
@@ -57,9 +53,9 @@ export type VehicleMaxAggregateOutputType = {
   make: string | null
   model: string | null
   driverId: string | null
-  ownerId: number | null
+  ownerId: string | null
   capacity: number | null
-  companyId: number | null
+  companyId: string | null
 }
 
 export type VehicleCountAggregateOutputType = {
@@ -77,15 +73,11 @@ export type VehicleCountAggregateOutputType = {
 
 
 export type VehicleAvgAggregateInputType = {
-  ownerId?: true
   capacity?: true
-  companyId?: true
 }
 
 export type VehicleSumAggregateInputType = {
-  ownerId?: true
   capacity?: true
-  companyId?: true
 }
 
 export type VehicleMinAggregateInputType = {
@@ -218,9 +210,9 @@ export type VehicleGroupByOutputType = {
   make: string | null
   model: string | null
   driverId: string | null
-  ownerId: number
+  ownerId: string
   capacity: number | null
-  companyId: number | null
+  companyId: string | null
   _count: VehicleCountAggregateOutputType | null
   _avg: VehicleAvgAggregateOutputType | null
   _sum: VehicleSumAggregateOutputType | null
@@ -253,9 +245,9 @@ export type vehicleWhereInput = {
   make?: Prisma.StringNullableFilter<"vehicle"> | string | null
   model?: Prisma.StringNullableFilter<"vehicle"> | string | null
   driverId?: Prisma.StringNullableFilter<"vehicle"> | string | null
-  ownerId?: Prisma.IntFilter<"vehicle"> | number
+  ownerId?: Prisma.StringFilter<"vehicle"> | string
   capacity?: Prisma.IntNullableFilter<"vehicle"> | number | null
-  companyId?: Prisma.IntNullableFilter<"vehicle"> | number | null
+  companyId?: Prisma.StringNullableFilter<"vehicle"> | string | null
   alert?: Prisma.AlertListRelationFilter
   dailysummary?: Prisma.DailySummaryListRelationFilter
   maintenance?: Prisma.MaintenanceListRelationFilter
@@ -299,9 +291,9 @@ export type vehicleWhereUniqueInput = Prisma.AtLeast<{
   Type?: Prisma.Enumvehicle_TypeFilter<"vehicle"> | $Enums.vehicle_Type
   make?: Prisma.StringNullableFilter<"vehicle"> | string | null
   model?: Prisma.StringNullableFilter<"vehicle"> | string | null
-  ownerId?: Prisma.IntFilter<"vehicle"> | number
+  ownerId?: Prisma.StringFilter<"vehicle"> | string
   capacity?: Prisma.IntNullableFilter<"vehicle"> | number | null
-  companyId?: Prisma.IntNullableFilter<"vehicle"> | number | null
+  companyId?: Prisma.StringNullableFilter<"vehicle"> | string | null
   alert?: Prisma.AlertListRelationFilter
   dailysummary?: Prisma.DailySummaryListRelationFilter
   maintenance?: Prisma.MaintenanceListRelationFilter
@@ -340,13 +332,13 @@ export type vehicleScalarWhereWithAggregatesInput = {
   make?: Prisma.StringNullableWithAggregatesFilter<"vehicle"> | string | null
   model?: Prisma.StringNullableWithAggregatesFilter<"vehicle"> | string | null
   driverId?: Prisma.StringNullableWithAggregatesFilter<"vehicle"> | string | null
-  ownerId?: Prisma.IntWithAggregatesFilter<"vehicle"> | number
+  ownerId?: Prisma.StringWithAggregatesFilter<"vehicle"> | string
   capacity?: Prisma.IntNullableWithAggregatesFilter<"vehicle"> | number | null
-  companyId?: Prisma.IntNullableWithAggregatesFilter<"vehicle"> | number | null
+  companyId?: Prisma.StringNullableWithAggregatesFilter<"vehicle"> | string | null
 }
 
 export type vehicleCreateInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -364,15 +356,15 @@ export type vehicleCreateInput = {
 }
 
 export type vehicleUncheckedCreateInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -406,9 +398,9 @@ export type vehicleUncheckedUpdateInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -418,15 +410,15 @@ export type vehicleUncheckedUpdateInput = {
 }
 
 export type vehicleCreateManyInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
 }
 
 export type vehicleUpdateManyMutationInput = {
@@ -445,9 +437,9 @@ export type vehicleUncheckedUpdateManyInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type VehicleScalarRelationFilter = {
@@ -489,9 +481,7 @@ export type vehicleCountOrderByAggregateInput = {
 }
 
 export type vehicleAvgOrderByAggregateInput = {
-  ownerId?: Prisma.SortOrder
   capacity?: Prisma.SortOrder
-  companyId?: Prisma.SortOrder
 }
 
 export type vehicleMaxOrderByAggregateInput = {
@@ -519,9 +509,7 @@ export type vehicleMinOrderByAggregateInput = {
 }
 
 export type vehicleSumOrderByAggregateInput = {
-  ownerId?: Prisma.SortOrder
   capacity?: Prisma.SortOrder
-  companyId?: Prisma.SortOrder
 }
 
 export type vehicleCreateNestedOneWithoutAlertInput = {
@@ -729,7 +717,7 @@ export type Enumvehicle_TypeFieldUpdateOperationsInput = {
 }
 
 export type vehicleCreateWithoutAlertInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -746,15 +734,15 @@ export type vehicleCreateWithoutAlertInput = {
 }
 
 export type vehicleUncheckedCreateWithoutAlertInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
@@ -802,9 +790,9 @@ export type vehicleUncheckedUpdateWithoutAlertInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
@@ -813,7 +801,7 @@ export type vehicleUncheckedUpdateWithoutAlertInput = {
 }
 
 export type vehicleCreateWithoutCompaniesInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -830,13 +818,13 @@ export type vehicleCreateWithoutCompaniesInput = {
 }
 
 export type vehicleUncheckedCreateWithoutCompaniesInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
@@ -882,13 +870,13 @@ export type vehicleScalarWhereInput = {
   make?: Prisma.StringNullableFilter<"vehicle"> | string | null
   model?: Prisma.StringNullableFilter<"vehicle"> | string | null
   driverId?: Prisma.StringNullableFilter<"vehicle"> | string | null
-  ownerId?: Prisma.IntFilter<"vehicle"> | number
+  ownerId?: Prisma.StringFilter<"vehicle"> | string
   capacity?: Prisma.IntNullableFilter<"vehicle"> | number | null
-  companyId?: Prisma.IntNullableFilter<"vehicle"> | number | null
+  companyId?: Prisma.StringNullableFilter<"vehicle"> | string | null
 }
 
 export type vehicleCreateWithoutDailysummaryInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -905,15 +893,15 @@ export type vehicleCreateWithoutDailysummaryInput = {
 }
 
 export type vehicleUncheckedCreateWithoutDailysummaryInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
@@ -961,9 +949,9 @@ export type vehicleUncheckedUpdateWithoutDailysummaryInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
@@ -972,7 +960,7 @@ export type vehicleUncheckedUpdateWithoutDailysummaryInput = {
 }
 
 export type vehicleCreateWithoutDriverInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -989,14 +977,14 @@ export type vehicleCreateWithoutDriverInput = {
 }
 
 export type vehicleUncheckedCreateWithoutDriverInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -1044,9 +1032,9 @@ export type vehicleUncheckedUpdateWithoutDriverInput = {
   plateNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1056,7 +1044,7 @@ export type vehicleUncheckedUpdateWithoutDriverInput = {
 }
 
 export type vehicleCreateWithoutMaintenanceInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -1073,15 +1061,15 @@ export type vehicleCreateWithoutMaintenanceInput = {
 }
 
 export type vehicleUncheckedCreateWithoutMaintenanceInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance_data?: Prisma.maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
@@ -1129,9 +1117,9 @@ export type vehicleUncheckedUpdateWithoutMaintenanceInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance_data?: Prisma.maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1140,7 +1128,7 @@ export type vehicleUncheckedUpdateWithoutMaintenanceInput = {
 }
 
 export type vehicleCreateWithoutMaintenance_dataInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -1157,15 +1145,15 @@ export type vehicleCreateWithoutMaintenance_dataInput = {
 }
 
 export type vehicleUncheckedCreateWithoutMaintenance_dataInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -1213,9 +1201,9 @@ export type vehicleUncheckedUpdateWithoutMaintenance_dataInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1224,7 +1212,7 @@ export type vehicleUncheckedUpdateWithoutMaintenance_dataInput = {
 }
 
 export type vehicleCreateWithoutStatusInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -1241,15 +1229,15 @@ export type vehicleCreateWithoutStatusInput = {
 }
 
 export type vehicleUncheckedCreateWithoutStatusInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -1297,9 +1285,9 @@ export type vehicleUncheckedUpdateWithoutStatusInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1308,7 +1296,7 @@ export type vehicleUncheckedUpdateWithoutStatusInput = {
 }
 
 export type vehicleCreateWithoutTripInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -1325,15 +1313,15 @@ export type vehicleCreateWithoutTripInput = {
 }
 
 export type vehicleUncheckedCreateWithoutTripInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -1381,9 +1369,9 @@ export type vehicleUncheckedUpdateWithoutTripInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1392,7 +1380,7 @@ export type vehicleUncheckedUpdateWithoutTripInput = {
 }
 
 export type vehicleCreateWithoutUsersInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
@@ -1409,14 +1397,14 @@ export type vehicleCreateWithoutUsersInput = {
 }
 
 export type vehicleUncheckedCreateWithoutUsersInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutVehicleInput
   dailysummary?: Prisma.dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
   maintenance?: Prisma.maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -1452,13 +1440,13 @@ export type vehicleUpdateManyWithWhereWithoutUsersInput = {
 }
 
 export type vehicleCreateManyCompaniesInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
-  ownerId: number
+  ownerId: string
   capacity?: number | null
 }
 
@@ -1486,7 +1474,7 @@ export type vehicleUncheckedUpdateWithoutCompaniesInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1503,19 +1491,19 @@ export type vehicleUncheckedUpdateManyWithoutCompaniesInput = {
   make?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  ownerId?: Prisma.IntFieldUpdateOperationsInput | number
+  ownerId?: Prisma.StringFieldUpdateOperationsInput | string
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
 export type vehicleCreateManyUsersInput = {
-  id: string
+  id?: string
   Type?: $Enums.vehicle_Type
   plateNumber?: string | null
   make?: string | null
   model?: string | null
   driverId?: string | null
   capacity?: number | null
-  companyId?: number | null
+  companyId?: string | null
 }
 
 export type vehicleUpdateWithoutUsersInput = {
@@ -1543,7 +1531,7 @@ export type vehicleUncheckedUpdateWithoutUsersInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutVehicleNestedInput
   dailysummary?: Prisma.dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
   maintenance?: Prisma.maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -1560,7 +1548,7 @@ export type vehicleUncheckedUpdateManyWithoutUsersInput = {
   model?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   driverId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   capacity?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 
@@ -1709,9 +1697,9 @@ export type $vehiclePayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     make: string | null
     model: string | null
     driverId: string | null
-    ownerId: number
+    ownerId: string
     capacity: number | null
-    companyId: number | null
+    companyId: string | null
   }, ExtArgs["result"]["vehicle"]>
   composites: {}
 }
@@ -2096,9 +2084,9 @@ export interface vehicleFieldRefs {
   readonly make: Prisma.FieldRef<"vehicle", 'String'>
   readonly model: Prisma.FieldRef<"vehicle", 'String'>
   readonly driverId: Prisma.FieldRef<"vehicle", 'String'>
-  readonly ownerId: Prisma.FieldRef<"vehicle", 'Int'>
+  readonly ownerId: Prisma.FieldRef<"vehicle", 'String'>
   readonly capacity: Prisma.FieldRef<"vehicle", 'Int'>
-  readonly companyId: Prisma.FieldRef<"vehicle", 'Int'>
+  readonly companyId: Prisma.FieldRef<"vehicle", 'String'>
 }
     
 

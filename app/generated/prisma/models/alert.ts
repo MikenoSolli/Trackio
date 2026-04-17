@@ -269,7 +269,7 @@ export type alertScalarWhereWithAggregatesInput = {
 }
 
 export type alertCreateInput = {
-  id: string
+  id?: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
   message: string
@@ -280,7 +280,7 @@ export type alertCreateInput = {
 }
 
 export type alertUncheckedCreateInput = {
-  id: string
+  id?: string
   vehicleId: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
@@ -313,7 +313,7 @@ export type alertUncheckedUpdateInput = {
 }
 
 export type alertCreateManyInput = {
-  id: string
+  id?: string
   vehicleId: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
@@ -497,7 +497,7 @@ export type alertUncheckedUpdateManyWithoutVehicleNestedInput = {
 }
 
 export type alertCreateWithoutDriverInput = {
-  id: string
+  id?: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
   message: string
@@ -507,7 +507,7 @@ export type alertCreateWithoutDriverInput = {
 }
 
 export type alertUncheckedCreateWithoutDriverInput = {
-  id: string
+  id?: string
   vehicleId: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
@@ -557,7 +557,7 @@ export type alertScalarWhereInput = {
 }
 
 export type alertCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
   message: string
@@ -567,7 +567,7 @@ export type alertCreateWithoutVehicleInput = {
 }
 
 export type alertUncheckedCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
   message: string
@@ -603,7 +603,7 @@ export type alertUpdateManyWithWhereWithoutVehicleInput = {
 }
 
 export type alertCreateManyDriverInput = {
-  id: string
+  id?: string
   vehicleId: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
@@ -643,7 +643,7 @@ export type alertUncheckedUpdateManyWithoutDriverInput = {
 }
 
 export type alertCreateManyVehicleInput = {
-  id: string
+  id?: string
   type: $Enums.alert_type
   severity?: $Enums.alert_severity
   message: string

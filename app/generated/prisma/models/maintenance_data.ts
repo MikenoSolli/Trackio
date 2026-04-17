@@ -286,7 +286,7 @@ export type maintenance_dataScalarWhereWithAggregatesInput = {
 }
 
 export type maintenance_dataCreateInput = {
-  id: string
+  id?: string
   fuelRate?: number | null
   fuelEff?: number | null
   EngineHours?: number | null
@@ -295,7 +295,7 @@ export type maintenance_dataCreateInput = {
 }
 
 export type maintenance_dataUncheckedCreateInput = {
-  id: string
+  id?: string
   vehicleId: string
   fuelRate?: number | null
   fuelEff?: number | null
@@ -322,7 +322,7 @@ export type maintenance_dataUncheckedUpdateInput = {
 }
 
 export type maintenance_dataCreateManyInput = {
-  id: string
+  id?: string
   vehicleId: string
   fuelRate?: number | null
   fuelEff?: number | null
@@ -445,7 +445,7 @@ export type maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput = {
 }
 
 export type maintenance_dataCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   fuelRate?: number | null
   fuelEff?: number | null
   EngineHours?: number | null
@@ -453,7 +453,7 @@ export type maintenance_dataCreateWithoutVehicleInput = {
 }
 
 export type maintenance_dataUncheckedCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   fuelRate?: number | null
   fuelEff?: number | null
   EngineHours?: number | null
@@ -499,7 +499,7 @@ export type maintenance_dataScalarWhereInput = {
 }
 
 export type maintenance_dataCreateManyVehicleInput = {
-  id: string
+  id?: string
   fuelRate?: number | null
   fuelEff?: number | null
   EngineHours?: number | null

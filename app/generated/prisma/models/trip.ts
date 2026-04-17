@@ -306,7 +306,7 @@ export type tripScalarWhereWithAggregatesInput = {
 }
 
 export type tripCreateInput = {
-  id: string
+  id?: string
   startTime: Date | string
   endTime?: Date | string | null
   distance?: number
@@ -317,7 +317,7 @@ export type tripCreateInput = {
 }
 
 export type tripUncheckedCreateInput = {
-  id: string
+  id?: string
   vehicleId: string
   startTime: Date | string
   endTime?: Date | string | null
@@ -350,7 +350,7 @@ export type tripUncheckedUpdateInput = {
 }
 
 export type tripCreateManyInput = {
-  id: string
+  id?: string
   vehicleId: string
   startTime: Date | string
   endTime?: Date | string | null
@@ -483,7 +483,7 @@ export type tripUncheckedUpdateManyWithoutVehicleNestedInput = {
 }
 
 export type tripCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   startTime: Date | string
   endTime?: Date | string | null
   distance?: number
@@ -493,7 +493,7 @@ export type tripCreateWithoutVehicleInput = {
 }
 
 export type tripUncheckedCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   startTime: Date | string
   endTime?: Date | string | null
   distance?: number
@@ -543,7 +543,7 @@ export type tripScalarWhereInput = {
 }
 
 export type tripCreateManyVehicleInput = {
-  id: string
+  id?: string
   startTime: Date | string
   endTime?: Date | string | null
   distance?: number

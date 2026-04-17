@@ -258,6 +258,7 @@ export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
 export const companiesOrderByRelevanceFieldEnum = {
+  id: 'id',
   name: 'name',
   email: 'email',
   phone: 'phone',
@@ -279,7 +280,8 @@ export const driverOrderByRelevanceFieldEnum = {
   id: 'id',
   name: 'name',
   phone: 'phone',
-  licenseNo: 'licenseNo'
+  licenseNo: 'licenseNo',
+  companyId: 'companyId'
 } as const
 
 export type driverOrderByRelevanceFieldEnum = (typeof driverOrderByRelevanceFieldEnum)[keyof typeof driverOrderByRelevanceFieldEnum]
@@ -321,9 +323,11 @@ export type tripOrderByRelevanceFieldEnum = (typeof tripOrderByRelevanceFieldEnu
 
 
 export const userOrderByRelevanceFieldEnum = {
+  id: 'id',
   name: 'name',
   email: 'email',
-  password: 'password'
+  password: 'password',
+  companyId: 'companyId'
 } as const
 
 export type userOrderByRelevanceFieldEnum = (typeof userOrderByRelevanceFieldEnum)[keyof typeof userOrderByRelevanceFieldEnum]
@@ -334,7 +338,9 @@ export const vehicleOrderByRelevanceFieldEnum = {
   plateNumber: 'plateNumber',
   make: 'make',
   model: 'model',
-  driverId: 'driverId'
+  driverId: 'driverId',
+  ownerId: 'ownerId',
+  companyId: 'companyId'
 } as const
 
 export type vehicleOrderByRelevanceFieldEnum = (typeof vehicleOrderByRelevanceFieldEnum)[keyof typeof vehicleOrderByRelevanceFieldEnum]

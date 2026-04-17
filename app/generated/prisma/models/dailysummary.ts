@@ -459,7 +459,7 @@ export type dailySummaryScalarWhereWithAggregatesInput = {
 }
 
 export type dailySummaryCreateInput = {
-  id: string
+  id?: string
   date: Date | string
   modeFuelLevel?: number | null
   modeOilPressure?: number | null
@@ -479,7 +479,7 @@ export type dailySummaryCreateInput = {
 }
 
 export type dailySummaryUncheckedCreateInput = {
-  id: string
+  id?: string
   vehicleId: string
   date: Date | string
   modeFuelLevel?: number | null
@@ -539,7 +539,7 @@ export type dailySummaryUncheckedUpdateInput = {
 }
 
 export type dailySummaryCreateManyInput = {
-  id: string
+  id?: string
   vehicleId: string
   date: Date | string
   modeFuelLevel?: number | null
@@ -726,6 +726,14 @@ export type FloatFieldUpdateOperationsInput = {
   divide?: number
 }
 
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type dailySummaryCreateNestedManyWithoutVehicleInput = {
   create?: Prisma.XOR<Prisma.dailySummaryCreateWithoutVehicleInput, Prisma.dailySummaryUncheckedCreateWithoutVehicleInput> | Prisma.dailySummaryCreateWithoutVehicleInput[] | Prisma.dailySummaryUncheckedCreateWithoutVehicleInput[]
   connectOrCreate?: Prisma.dailySummaryCreateOrConnectWithoutVehicleInput | Prisma.dailySummaryCreateOrConnectWithoutVehicleInput[]
@@ -769,7 +777,7 @@ export type dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput = {
 }
 
 export type dailySummaryCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   date: Date | string
   modeFuelLevel?: number | null
   modeOilPressure?: number | null
@@ -788,7 +796,7 @@ export type dailySummaryCreateWithoutVehicleInput = {
 }
 
 export type dailySummaryUncheckedCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   date: Date | string
   modeFuelLevel?: number | null
   modeOilPressure?: number | null
@@ -856,7 +864,7 @@ export type dailySummaryScalarWhereInput = {
 }
 
 export type dailySummaryCreateManyVehicleInput = {
-  id: string
+  id?: string
   date: Date | string
   modeFuelLevel?: number | null
   modeOilPressure?: number | null

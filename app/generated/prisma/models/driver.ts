@@ -28,12 +28,10 @@ export type AggregateDriver = {
 
 export type DriverAvgAggregateOutputType = {
   performance: number | null
-  companyId: number | null
 }
 
 export type DriverSumAggregateOutputType = {
   performance: number | null
-  companyId: number | null
 }
 
 export type DriverMinAggregateOutputType = {
@@ -43,7 +41,7 @@ export type DriverMinAggregateOutputType = {
   licenseNo: string | null
   performance: number | null
   licenceExp: Date | null
-  companyId: number | null
+  companyId: string | null
 }
 
 export type DriverMaxAggregateOutputType = {
@@ -53,7 +51,7 @@ export type DriverMaxAggregateOutputType = {
   licenseNo: string | null
   performance: number | null
   licenceExp: Date | null
-  companyId: number | null
+  companyId: string | null
 }
 
 export type DriverCountAggregateOutputType = {
@@ -70,12 +68,10 @@ export type DriverCountAggregateOutputType = {
 
 export type DriverAvgAggregateInputType = {
   performance?: true
-  companyId?: true
 }
 
 export type DriverSumAggregateInputType = {
   performance?: true
-  companyId?: true
 }
 
 export type DriverMinAggregateInputType = {
@@ -202,7 +198,7 @@ export type DriverGroupByOutputType = {
   licenseNo: string | null
   performance: number
   licenceExp: Date | null
-  companyId: number | null
+  companyId: string | null
   _count: DriverCountAggregateOutputType | null
   _avg: DriverAvgAggregateOutputType | null
   _sum: DriverSumAggregateOutputType | null
@@ -235,7 +231,7 @@ export type driverWhereInput = {
   licenseNo?: Prisma.StringNullableFilter<"driver"> | string | null
   performance?: Prisma.FloatFilter<"driver"> | number
   licenceExp?: Prisma.DateTimeNullableFilter<"driver"> | Date | string | null
-  companyId?: Prisma.IntNullableFilter<"driver"> | number | null
+  companyId?: Prisma.StringNullableFilter<"driver"> | string | null
   alert?: Prisma.AlertListRelationFilter
   companies?: Prisma.XOR<Prisma.CompaniesNullableScalarRelationFilter, Prisma.companiesWhereInput> | null
   vehicle?: Prisma.XOR<Prisma.VehicleNullableScalarRelationFilter, Prisma.vehicleWhereInput> | null
@@ -265,7 +261,7 @@ export type driverWhereUniqueInput = Prisma.AtLeast<{
   licenseNo?: Prisma.StringNullableFilter<"driver"> | string | null
   performance?: Prisma.FloatFilter<"driver"> | number
   licenceExp?: Prisma.DateTimeNullableFilter<"driver"> | Date | string | null
-  companyId?: Prisma.IntNullableFilter<"driver"> | number | null
+  companyId?: Prisma.StringNullableFilter<"driver"> | string | null
   alert?: Prisma.AlertListRelationFilter
   companies?: Prisma.XOR<Prisma.CompaniesNullableScalarRelationFilter, Prisma.companiesWhereInput> | null
   vehicle?: Prisma.XOR<Prisma.VehicleNullableScalarRelationFilter, Prisma.vehicleWhereInput> | null
@@ -296,11 +292,11 @@ export type driverScalarWhereWithAggregatesInput = {
   licenseNo?: Prisma.StringNullableWithAggregatesFilter<"driver"> | string | null
   performance?: Prisma.FloatWithAggregatesFilter<"driver"> | number
   licenceExp?: Prisma.DateTimeNullableWithAggregatesFilter<"driver"> | Date | string | null
-  companyId?: Prisma.IntNullableWithAggregatesFilter<"driver"> | number | null
+  companyId?: Prisma.StringNullableWithAggregatesFilter<"driver"> | string | null
 }
 
 export type driverCreateInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
@@ -312,13 +308,13 @@ export type driverCreateInput = {
 }
 
 export type driverUncheckedCreateInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
   performance?: number
   licenceExp?: Date | string | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutDriverInput
   vehicle?: Prisma.vehicleUncheckedCreateNestedOneWithoutDriverInput
 }
@@ -342,19 +338,19 @@ export type driverUncheckedUpdateInput = {
   licenseNo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   performance?: Prisma.FloatFieldUpdateOperationsInput | number
   licenceExp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutDriverNestedInput
   vehicle?: Prisma.vehicleUncheckedUpdateOneWithoutDriverNestedInput
 }
 
 export type driverCreateManyInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
   performance?: number
   licenceExp?: Date | string | null
-  companyId?: number | null
+  companyId?: string | null
 }
 
 export type driverUpdateManyMutationInput = {
@@ -373,7 +369,7 @@ export type driverUncheckedUpdateManyInput = {
   licenseNo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   performance?: Prisma.FloatFieldUpdateOperationsInput | number
   licenceExp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type DriverScalarRelationFilter = {
@@ -409,7 +405,6 @@ export type driverCountOrderByAggregateInput = {
 
 export type driverAvgOrderByAggregateInput = {
   performance?: Prisma.SortOrder
-  companyId?: Prisma.SortOrder
 }
 
 export type driverMaxOrderByAggregateInput = {
@@ -434,7 +429,6 @@ export type driverMinOrderByAggregateInput = {
 
 export type driverSumOrderByAggregateInput = {
   performance?: Prisma.SortOrder
-  companyId?: Prisma.SortOrder
 }
 
 export type DriverNullableScalarRelationFilter = {
@@ -502,14 +496,6 @@ export type NullableDateTimeFieldUpdateOperationsInput = {
   set?: Date | string | null
 }
 
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
-  increment?: number
-  decrement?: number
-  multiply?: number
-  divide?: number
-}
-
 export type driverCreateNestedOneWithoutVehicleInput = {
   create?: Prisma.XOR<Prisma.driverCreateWithoutVehicleInput, Prisma.driverUncheckedCreateWithoutVehicleInput>
   connectOrCreate?: Prisma.driverCreateOrConnectWithoutVehicleInput
@@ -527,7 +513,7 @@ export type driverUpdateOneWithoutVehicleNestedInput = {
 }
 
 export type driverCreateWithoutAlertInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
@@ -538,13 +524,13 @@ export type driverCreateWithoutAlertInput = {
 }
 
 export type driverUncheckedCreateWithoutAlertInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
   performance?: number
   licenceExp?: Date | string | null
-  companyId?: number | null
+  companyId?: string | null
   vehicle?: Prisma.vehicleUncheckedCreateNestedOneWithoutDriverInput
 }
 
@@ -582,12 +568,12 @@ export type driverUncheckedUpdateWithoutAlertInput = {
   licenseNo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   performance?: Prisma.FloatFieldUpdateOperationsInput | number
   licenceExp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicle?: Prisma.vehicleUncheckedUpdateOneWithoutDriverNestedInput
 }
 
 export type driverCreateWithoutCompaniesInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
@@ -598,7 +584,7 @@ export type driverCreateWithoutCompaniesInput = {
 }
 
 export type driverUncheckedCreateWithoutCompaniesInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
@@ -644,11 +630,11 @@ export type driverScalarWhereInput = {
   licenseNo?: Prisma.StringNullableFilter<"driver"> | string | null
   performance?: Prisma.FloatFilter<"driver"> | number
   licenceExp?: Prisma.DateTimeNullableFilter<"driver"> | Date | string | null
-  companyId?: Prisma.IntNullableFilter<"driver"> | number | null
+  companyId?: Prisma.StringNullableFilter<"driver"> | string | null
 }
 
 export type driverCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
@@ -659,13 +645,13 @@ export type driverCreateWithoutVehicleInput = {
 }
 
 export type driverUncheckedCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
   performance?: number
   licenceExp?: Date | string | null
-  companyId?: number | null
+  companyId?: string | null
   alert?: Prisma.alertUncheckedCreateNestedManyWithoutDriverInput
 }
 
@@ -703,12 +689,12 @@ export type driverUncheckedUpdateWithoutVehicleInput = {
   licenseNo?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   performance?: Prisma.FloatFieldUpdateOperationsInput | number
   licenceExp?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   alert?: Prisma.alertUncheckedUpdateManyWithoutDriverNestedInput
 }
 
 export type driverCreateManyCompaniesInput = {
-  id: string
+  id?: string
   name: string
   phone?: string | null
   licenseNo?: string | null
@@ -826,7 +812,7 @@ export type $driverPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
     licenseNo: string | null
     performance: number
     licenceExp: Date | null
-    companyId: number | null
+    companyId: string | null
   }, ExtArgs["result"]["driver"]>
   composites: {}
 }
@@ -1205,7 +1191,7 @@ export interface driverFieldRefs {
   readonly licenseNo: Prisma.FieldRef<"driver", 'String'>
   readonly performance: Prisma.FieldRef<"driver", 'Float'>
   readonly licenceExp: Prisma.FieldRef<"driver", 'DateTime'>
-  readonly companyId: Prisma.FieldRef<"driver", 'Int'>
+  readonly companyId: Prisma.FieldRef<"driver", 'String'>
 }
     
 

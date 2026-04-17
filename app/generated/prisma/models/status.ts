@@ -442,7 +442,7 @@ export type statusScalarWhereWithAggregatesInput = {
 }
 
 export type statusCreateInput = {
-  id: string
+  id?: string
   lastLat?: number | null
   lastLng?: number | null
   lastSpeed?: number | null
@@ -461,7 +461,7 @@ export type statusCreateInput = {
 }
 
 export type statusUncheckedCreateInput = {
-  id: string
+  id?: string
   lastLat?: number | null
   lastLng?: number | null
   lastSpeed?: number | null
@@ -518,7 +518,7 @@ export type statusUncheckedUpdateInput = {
 }
 
 export type statusCreateManyInput = {
-  id: string
+  id?: string
   lastLat?: number | null
   lastLng?: number | null
   lastSpeed?: number | null
@@ -680,6 +680,14 @@ export type Enumstatus_stateFieldUpdateOperationsInput = {
   set?: $Enums.status_state
 }
 
+export type NullableIntFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type statusCreateNestedManyWithoutVehicleInput = {
   create?: Prisma.XOR<Prisma.statusCreateWithoutVehicleInput, Prisma.statusUncheckedCreateWithoutVehicleInput> | Prisma.statusCreateWithoutVehicleInput[] | Prisma.statusUncheckedCreateWithoutVehicleInput[]
   connectOrCreate?: Prisma.statusCreateOrConnectWithoutVehicleInput | Prisma.statusCreateOrConnectWithoutVehicleInput[]
@@ -723,7 +731,7 @@ export type statusUncheckedUpdateManyWithoutVehicleNestedInput = {
 }
 
 export type statusCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   lastLat?: number | null
   lastLng?: number | null
   lastSpeed?: number | null
@@ -741,7 +749,7 @@ export type statusCreateWithoutVehicleInput = {
 }
 
 export type statusUncheckedCreateWithoutVehicleInput = {
-  id: string
+  id?: string
   lastLat?: number | null
   lastLng?: number | null
   lastSpeed?: number | null
@@ -807,7 +815,7 @@ export type statusScalarWhereInput = {
 }
 
 export type statusCreateManyVehicleInput = {
-  id: string
+  id?: string
   lastLat?: number | null
   lastLng?: number | null
   lastSpeed?: number | null

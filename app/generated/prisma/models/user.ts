@@ -20,42 +20,30 @@ export type userModel = runtime.Types.Result.DefaultSelection<Prisma.$userPayloa
 
 export type AggregateUser = {
   _count: UserCountAggregateOutputType | null
-  _avg: UserAvgAggregateOutputType | null
-  _sum: UserSumAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
 }
 
-export type UserAvgAggregateOutputType = {
-  id: number | null
-  companyId: number | null
-}
-
-export type UserSumAggregateOutputType = {
-  id: number | null
-  companyId: number | null
-}
-
 export type UserMinAggregateOutputType = {
-  id: number | null
+  id: string | null
   name: string | null
   email: string | null
   password: string | null
   role: $Enums.users_role | null
   created_data: Date | null
   updatedAt: Date | null
-  companyId: number | null
+  companyId: string | null
 }
 
 export type UserMaxAggregateOutputType = {
-  id: number | null
+  id: string | null
   name: string | null
   email: string | null
   password: string | null
   role: $Enums.users_role | null
   created_data: Date | null
   updatedAt: Date | null
-  companyId: number | null
+  companyId: string | null
 }
 
 export type UserCountAggregateOutputType = {
@@ -70,16 +58,6 @@ export type UserCountAggregateOutputType = {
   _all: number
 }
 
-
-export type UserAvgAggregateInputType = {
-  id?: true
-  companyId?: true
-}
-
-export type UserSumAggregateInputType = {
-  id?: true
-  companyId?: true
-}
 
 export type UserMinAggregateInputType = {
   id?: true
@@ -153,18 +131,6 @@ export type UserAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalA
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Select which fields to average
-  **/
-  _avg?: UserAvgAggregateInputType
-  /**
-   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-   * 
-   * Select which fields to sum
-  **/
-  _sum?: UserSumAggregateInputType
-  /**
-   * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-   * 
    * Select which fields to find the minimum value
   **/
   _min?: UserMinAggregateInputType
@@ -195,24 +161,20 @@ export type userGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
   take?: number
   skip?: number
   _count?: UserCountAggregateInputType | true
-  _avg?: UserAvgAggregateInputType
-  _sum?: UserSumAggregateInputType
   _min?: UserMinAggregateInputType
   _max?: UserMaxAggregateInputType
 }
 
 export type UserGroupByOutputType = {
-  id: number
+  id: string
   name: string | null
   email: string
   password: string
   role: $Enums.users_role
   created_data: Date
   updatedAt: Date
-  companyId: number | null
+  companyId: string | null
   _count: UserCountAggregateOutputType | null
-  _avg: UserAvgAggregateOutputType | null
-  _sum: UserSumAggregateOutputType | null
   _min: UserMinAggregateOutputType | null
   _max: UserMaxAggregateOutputType | null
 }
@@ -236,14 +198,14 @@ export type userWhereInput = {
   AND?: Prisma.userWhereInput | Prisma.userWhereInput[]
   OR?: Prisma.userWhereInput[]
   NOT?: Prisma.userWhereInput | Prisma.userWhereInput[]
-  id?: Prisma.IntFilter<"user"> | number
+  id?: Prisma.StringFilter<"user"> | string
   name?: Prisma.StringNullableFilter<"user"> | string | null
   email?: Prisma.StringFilter<"user"> | string
   password?: Prisma.StringFilter<"user"> | string
   role?: Prisma.Enumusers_roleFilter<"user"> | $Enums.users_role
   created_data?: Prisma.DateTimeFilter<"user"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"user"> | Date | string
-  companyId?: Prisma.IntNullableFilter<"user"> | number | null
+  companyId?: Prisma.StringNullableFilter<"user"> | string | null
   companies?: Prisma.XOR<Prisma.CompaniesNullableScalarRelationFilter, Prisma.companiesWhereInput> | null
   vehicle?: Prisma.VehicleListRelationFilter
 }
@@ -263,7 +225,7 @@ export type userOrderByWithRelationInput = {
 }
 
 export type userWhereUniqueInput = Prisma.AtLeast<{
-  id?: number
+  id?: string
   email?: string
   AND?: Prisma.userWhereInput | Prisma.userWhereInput[]
   OR?: Prisma.userWhereInput[]
@@ -273,7 +235,7 @@ export type userWhereUniqueInput = Prisma.AtLeast<{
   role?: Prisma.Enumusers_roleFilter<"user"> | $Enums.users_role
   created_data?: Prisma.DateTimeFilter<"user"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"user"> | Date | string
-  companyId?: Prisma.IntNullableFilter<"user"> | number | null
+  companyId?: Prisma.StringNullableFilter<"user"> | string | null
   companies?: Prisma.XOR<Prisma.CompaniesNullableScalarRelationFilter, Prisma.companiesWhereInput> | null
   vehicle?: Prisma.VehicleListRelationFilter
 }, "id" | "email">
@@ -288,27 +250,26 @@ export type userOrderByWithAggregationInput = {
   updatedAt?: Prisma.SortOrder
   companyId?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.userCountOrderByAggregateInput
-  _avg?: Prisma.userAvgOrderByAggregateInput
   _max?: Prisma.userMaxOrderByAggregateInput
   _min?: Prisma.userMinOrderByAggregateInput
-  _sum?: Prisma.userSumOrderByAggregateInput
 }
 
 export type userScalarWhereWithAggregatesInput = {
   AND?: Prisma.userScalarWhereWithAggregatesInput | Prisma.userScalarWhereWithAggregatesInput[]
   OR?: Prisma.userScalarWhereWithAggregatesInput[]
   NOT?: Prisma.userScalarWhereWithAggregatesInput | Prisma.userScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"user"> | number
+  id?: Prisma.StringWithAggregatesFilter<"user"> | string
   name?: Prisma.StringNullableWithAggregatesFilter<"user"> | string | null
   email?: Prisma.StringWithAggregatesFilter<"user"> | string
   password?: Prisma.StringWithAggregatesFilter<"user"> | string
   role?: Prisma.Enumusers_roleWithAggregatesFilter<"user"> | $Enums.users_role
   created_data?: Prisma.DateTimeWithAggregatesFilter<"user"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"user"> | Date | string
-  companyId?: Prisma.IntNullableWithAggregatesFilter<"user"> | number | null
+  companyId?: Prisma.StringNullableWithAggregatesFilter<"user"> | string | null
 }
 
 export type userCreateInput = {
+  id?: string
   name?: string | null
   email: string
   password: string
@@ -320,18 +281,19 @@ export type userCreateInput = {
 }
 
 export type userUncheckedCreateInput = {
-  id?: number
+  id?: string
   name?: string | null
   email: string
   password: string
   role?: $Enums.users_role
   created_data?: Date | string
   updatedAt: Date | string
-  companyId?: number | null
+  companyId?: string | null
   vehicle?: Prisma.vehicleUncheckedCreateNestedManyWithoutUsersInput
 }
 
 export type userUpdateInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
@@ -343,29 +305,30 @@ export type userUpdateInput = {
 }
 
 export type userUncheckedUpdateInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.Enumusers_roleFieldUpdateOperationsInput | $Enums.users_role
   created_data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   vehicle?: Prisma.vehicleUncheckedUpdateManyWithoutUsersNestedInput
 }
 
 export type userCreateManyInput = {
-  id?: number
+  id?: string
   name?: string | null
   email: string
   password: string
   role?: $Enums.users_role
   created_data?: Date | string
   updatedAt: Date | string
-  companyId?: number | null
+  companyId?: string | null
 }
 
 export type userUpdateManyMutationInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
@@ -375,14 +338,14 @@ export type userUpdateManyMutationInput = {
 }
 
 export type userUncheckedUpdateManyInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.Enumusers_roleFieldUpdateOperationsInput | $Enums.users_role
   created_data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type UserListRelationFilter = {
@@ -412,11 +375,6 @@ export type userCountOrderByAggregateInput = {
   companyId?: Prisma.SortOrder
 }
 
-export type userAvgOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  companyId?: Prisma.SortOrder
-}
-
 export type userMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
@@ -436,11 +394,6 @@ export type userMinOrderByAggregateInput = {
   role?: Prisma.SortOrder
   created_data?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  companyId?: Prisma.SortOrder
-}
-
-export type userSumOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   companyId?: Prisma.SortOrder
 }
 
@@ -510,6 +463,7 @@ export type userUpdateOneRequiredWithoutVehicleNestedInput = {
 }
 
 export type userCreateWithoutCompaniesInput = {
+  id?: string
   name?: string | null
   email: string
   password: string
@@ -520,7 +474,7 @@ export type userCreateWithoutCompaniesInput = {
 }
 
 export type userUncheckedCreateWithoutCompaniesInput = {
-  id?: number
+  id?: string
   name?: string | null
   email: string
   password: string
@@ -560,17 +514,18 @@ export type userScalarWhereInput = {
   AND?: Prisma.userScalarWhereInput | Prisma.userScalarWhereInput[]
   OR?: Prisma.userScalarWhereInput[]
   NOT?: Prisma.userScalarWhereInput | Prisma.userScalarWhereInput[]
-  id?: Prisma.IntFilter<"user"> | number
+  id?: Prisma.StringFilter<"user"> | string
   name?: Prisma.StringNullableFilter<"user"> | string | null
   email?: Prisma.StringFilter<"user"> | string
   password?: Prisma.StringFilter<"user"> | string
   role?: Prisma.Enumusers_roleFilter<"user"> | $Enums.users_role
   created_data?: Prisma.DateTimeFilter<"user"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"user"> | Date | string
-  companyId?: Prisma.IntNullableFilter<"user"> | number | null
+  companyId?: Prisma.StringNullableFilter<"user"> | string | null
 }
 
 export type userCreateWithoutVehicleInput = {
+  id?: string
   name?: string | null
   email: string
   password: string
@@ -581,14 +536,14 @@ export type userCreateWithoutVehicleInput = {
 }
 
 export type userUncheckedCreateWithoutVehicleInput = {
-  id?: number
+  id?: string
   name?: string | null
   email: string
   password: string
   role?: $Enums.users_role
   created_data?: Date | string
   updatedAt: Date | string
-  companyId?: number | null
+  companyId?: string | null
 }
 
 export type userCreateOrConnectWithoutVehicleInput = {
@@ -608,6 +563,7 @@ export type userUpdateToOneWithWhereWithoutVehicleInput = {
 }
 
 export type userUpdateWithoutVehicleInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
@@ -618,18 +574,18 @@ export type userUpdateWithoutVehicleInput = {
 }
 
 export type userUncheckedUpdateWithoutVehicleInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
   role?: Prisma.Enumusers_roleFieldUpdateOperationsInput | $Enums.users_role
   created_data?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  companyId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  companyId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
 export type userCreateManyCompaniesInput = {
-  id?: number
+  id?: string
   name?: string | null
   email: string
   password: string
@@ -639,6 +595,7 @@ export type userCreateManyCompaniesInput = {
 }
 
 export type userUpdateWithoutCompaniesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
@@ -649,7 +606,7 @@ export type userUpdateWithoutCompaniesInput = {
 }
 
 export type userUncheckedUpdateWithoutCompaniesInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
@@ -660,7 +617,7 @@ export type userUncheckedUpdateWithoutCompaniesInput = {
 }
 
 export type userUncheckedUpdateManyWithoutCompaniesInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
+  id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   email?: Prisma.StringFieldUpdateOperationsInput | string
   password?: Prisma.StringFieldUpdateOperationsInput | string
@@ -741,14 +698,14 @@ export type $userPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     vehicle: Prisma.$vehiclePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    id: number
+    id: string
     name: string | null
     email: string
     password: string
     role: $Enums.users_role
     created_data: Date
     updatedAt: Date
-    companyId: number | null
+    companyId: string | null
   }, ExtArgs["result"]["user"]>
   composites: {}
 }
@@ -1120,14 +1077,14 @@ export interface Prisma__userClient<T, Null = never, ExtArgs extends runtime.Typ
  * Fields of the user model
  */
 export interface userFieldRefs {
-  readonly id: Prisma.FieldRef<"user", 'Int'>
+  readonly id: Prisma.FieldRef<"user", 'String'>
   readonly name: Prisma.FieldRef<"user", 'String'>
   readonly email: Prisma.FieldRef<"user", 'String'>
   readonly password: Prisma.FieldRef<"user", 'String'>
   readonly role: Prisma.FieldRef<"user", 'users_role'>
   readonly created_data: Prisma.FieldRef<"user", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"user", 'DateTime'>
-  readonly companyId: Prisma.FieldRef<"user", 'Int'>
+  readonly companyId: Prisma.FieldRef<"user", 'String'>
 }
     
 
