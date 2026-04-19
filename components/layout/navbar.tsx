@@ -16,7 +16,7 @@ const navLinks = [
   { name: "Vehicles", href: "/vehicles" },
   { name: "Drivers", href: "/driver" },
   { name: "Reports", href: "/reports" },
-  { name: "Tracking", href: "/tracking" },
+  { name: "Trips", href: "/trips" },
 ]
 
 export default function Navbar() {

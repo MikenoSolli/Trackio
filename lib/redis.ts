@@ -16,7 +16,7 @@ const redis = globalForRedis.redis ?? new Redis({
     }
     return Math.min(times * 200, 2000);
   },
-  lazyConnect: true, // don't connect until first command
+  //lazyConnect: true, // don't connect until first command
 });
 
 redis.on('error', (err) => {
