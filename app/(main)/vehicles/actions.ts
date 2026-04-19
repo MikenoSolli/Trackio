@@ -11,7 +11,7 @@ import { redirect } from "next/navigation";
 export async function addVehicle(formData: FormData) {
 
  const session = await getSession();
- const ownerId = session?.userId; 
+ const ownerId = Number(session?.userId); 
 
  console.log("Session Data on Dashboard:", session); // Debugging line
 
@@ -32,7 +32,7 @@ export async function addVehicle(formData: FormData) {
       model,
       plateNumber,
       Type: type,
-      ownerId: ownerId as string,
+      ownerId: ownerId,
     },
   });
 
@@ -93,10 +93,12 @@ export async function getVehicleHistory(vehicleId: string, limit: number = 100) 
   });
 }
 
+
+
 export async function getAllVehiclesDisplayData() {
   try{
 const session = await getSession();
-  const ownerId = session?.userId; 
+  const ownerId = Number(session?.userId); 
   if (!ownerId) return [];
   const vehicles = await prisma.vehicle.findMany({
   where: { ownerId: ownerId },
@@ -109,6 +111,7 @@ const session = await getSession();
   });
   console.log("Fetched Vehicles with Status:", vehicles); // Debugging line
 
+  
   return vehicles.map((v: any) => ({
     id: v.id,
     Name: `${v.make} ${v.model} ${v.plateNumber}`,

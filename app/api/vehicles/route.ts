@@ -5,7 +5,7 @@ import { getSession } from "@/app/_lib/sessions";
 export async function GET() {
   try {
     const session = await getSession();
-    const userId = session?.userId as string;
+    const userId = Number(session?.userId);
     
     if (!userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

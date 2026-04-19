@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     const isMatch = await bcrypt.compare(password, user.password);
     
     if (isMatch) {
-      await createSession(String(user.id), user.role);
+      await createSession(user.id, user.role);
       return NextResponse.json({ success: true, redirect: "/dashboard" });
     } else {
       return NextResponse.json({ error: "Invalid email or password." }, { status: 401 });
