@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URL=${DATABASE_URL:-mysql://root:admin%401212@localhost:3306/tractor_track}
+      - REDIS_URL=${REDIS_URL:-redis://localhost:6379}
+      - SESSION_SECRET=${SESSION_SECRET:-mBVG2WqCv4bbIfvY1V7C6sxK2JbJB/dA85SsK9DfdEY=}
+    restart: unless-stopped
