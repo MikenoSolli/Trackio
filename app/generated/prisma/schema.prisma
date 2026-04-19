@@ -24,7 +24,7 @@ model alert {
 }
 
 model companies {
-  id        String    @id @default(cuid())
+  id        Int       @id @default(autoincrement())
   name      String
   email     String?
   phone     String?
@@ -68,7 +68,7 @@ model driver {
   licenseNo   String?
   performance Float      @default(100)
   licenceExp  DateTime?  @db.Date
-  companyId   String?
+  companyId   Int?
   alert       alert[]
   companies   companies? @relation(fields: [companyId], references: [id], onUpdate: NoAction, map: "Driver_companyId_fkey")
   vehicle     vehicle?
@@ -137,14 +137,14 @@ model trip {
 }
 
 model user {
-  id           String     @id @default(cuid())
+  id           Int        @id @default(autoincrement())
   name         String?
   email        String     @unique
   password     String
   role         users_role @default(USER)
   created_data DateTime   @default(now())
   updatedAt    DateTime
-  companyId    String?
+  companyId    Int?
   companies    companies? @relation(fields: [companyId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "User_companyId_fkey")
   vehicle      vehicle[]
 
@@ -159,9 +159,9 @@ model vehicle {
   make             String?
   model            String?
   driverId         String?            @unique(map: "Vehicle_driverId_key")
-  ownerId          String
+  ownerId          Int
   capacity         Int?
-  companyId        String?
+  companyId        Int?
   alert            alert[]
   dailysummary     dailySummary[]
   maintenance      maintenance[]

@@ -260,7 +260,6 @@ exports.Prisma.NullsOrder = {
 };
 
 exports.Prisma.companiesOrderByRelevanceFieldEnum = {
-  id: 'id',
   name: 'name',
   email: 'email',
   phone: 'phone',
@@ -276,8 +275,7 @@ exports.Prisma.driverOrderByRelevanceFieldEnum = {
   id: 'id',
   name: 'name',
   phone: 'phone',
-  licenseNo: 'licenseNo',
-  companyId: 'companyId'
+  licenseNo: 'licenseNo'
 };
 
 exports.Prisma.maintenanceOrderByRelevanceFieldEnum = {
@@ -304,11 +302,9 @@ exports.Prisma.tripOrderByRelevanceFieldEnum = {
 };
 
 exports.Prisma.userOrderByRelevanceFieldEnum = {
-  id: 'id',
   name: 'name',
   email: 'email',
-  password: 'password',
-  companyId: 'companyId'
+  password: 'password'
 };
 
 exports.Prisma.vehicleOrderByRelevanceFieldEnum = {
@@ -316,9 +312,7 @@ exports.Prisma.vehicleOrderByRelevanceFieldEnum = {
   plateNumber: 'plateNumber',
   make: 'make',
   model: 'model',
-  driverId: 'driverId',
-  ownerId: 'ownerId',
-  companyId: 'companyId'
+  driverId: 'driverId'
 };
 exports.alert_type = exports.$Enums.alert_type = {
   SPEEDING: 'SPEEDING',
