@@ -28,7 +28,7 @@ if (user) {
   if (isMatch) {
     // Login successful
     console.log("✅ Login successful for user ID:", user.id);
-    await createSession(String(user.id), user.role); // Create session for the user
+    await createSession(user.id, user.role); // Create session for the user
     redirect("/dashboard");
 
   } else {

@@ -54,9 +54,9 @@ export async function getSession() {
 }
 
 export async function deleteSession() {
-  const cookieStore = await cookies();
   
   // This effectively tells the browser to expire the cookie immediately
+  const cookieStore = await cookies();
   cookieStore.delete("session");
 }
     
