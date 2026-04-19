@@ -55,7 +55,7 @@ jobs:
         run: |
           TAGS=$(echo "${{ steps.meta.outputs.tags }}" | tr ',' '\n')
 
-          docker build \
+          docker build --no cache \
             --build-arg DATABASE_URL="${{ secrets.DATABASE_URL }}" \
             --build-arg REDIS_URL="${{ secrets.REDIS_URL }}" \
             --build-arg SESSION_SECRET="${{ secrets.SESSION_SECRET }}" \
