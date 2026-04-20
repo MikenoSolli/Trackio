@@ -162,6 +162,7 @@ model vehicle {
   ownerId          Int
   capacity         Int?
   companyId        Int?
+  Imei             String?
   alert            alert[]
   dailysummary     dailySummary[]
   maintenance      maintenance[]

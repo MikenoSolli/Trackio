@@ -239,7 +239,8 @@ exports.Prisma.VehicleScalarFieldEnum = {
   driverId: 'driverId',
   ownerId: 'ownerId',
   capacity: 'capacity',
-  companyId: 'companyId'
+  companyId: 'companyId',
+  Imei: 'Imei'
 };
 
 exports.Prisma.SortOrder = {
@@ -312,7 +313,8 @@ exports.Prisma.vehicleOrderByRelevanceFieldEnum = {
   plateNumber: 'plateNumber',
   make: 'make',
   model: 'model',
-  driverId: 'driverId'
+  driverId: 'driverId',
+  Imei: 'Imei'
 };
 exports.alert_type = exports.$Enums.alert_type = {
   SPEEDING: 'SPEEDING',

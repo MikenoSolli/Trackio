@@ -11314,6 +11314,7 @@ export namespace Prisma {
     ownerId: number | null
     capacity: number | null
     companyId: number | null
+    Imei: string | null
   }
 
   export type VehicleMaxAggregateOutputType = {
@@ -11326,6 +11327,7 @@ export namespace Prisma {
     ownerId: number | null
     capacity: number | null
     companyId: number | null
+    Imei: string | null
   }
 
   export type VehicleCountAggregateOutputType = {
@@ -11338,6 +11340,7 @@ export namespace Prisma {
     ownerId: number
     capacity: number
     companyId: number
+    Imei: number
     _all: number
   }
 
@@ -11364,6 +11367,7 @@ export namespace Prisma {
     ownerId?: true
     capacity?: true
     companyId?: true
+    Imei?: true
   }
 
   export type VehicleMaxAggregateInputType = {
@@ -11376,6 +11380,7 @@ export namespace Prisma {
     ownerId?: true
     capacity?: true
     companyId?: true
+    Imei?: true
   }
 
   export type VehicleCountAggregateInputType = {
@@ -11388,6 +11393,7 @@ export namespace Prisma {
     ownerId?: true
     capacity?: true
     companyId?: true
+    Imei?: true
     _all?: true
   }
 
@@ -11487,6 +11493,7 @@ export namespace Prisma {
     ownerId: number
     capacity: number | null
     companyId: number | null
+    Imei: string | null
     _count: VehicleCountAggregateOutputType | null
     _avg: VehicleAvgAggregateOutputType | null
     _sum: VehicleSumAggregateOutputType | null
@@ -11518,6 +11525,7 @@ export namespace Prisma {
     ownerId?: boolean
     capacity?: boolean
     companyId?: boolean
+    Imei?: boolean
     alert?: boolean | vehicle$alertArgs<ExtArgs>
     dailysummary?: boolean | vehicle$dailysummaryArgs<ExtArgs>
     maintenance?: boolean | vehicle$maintenanceArgs<ExtArgs>
@@ -11542,9 +11550,10 @@ export namespace Prisma {
     ownerId?: boolean
     capacity?: boolean
     companyId?: boolean
+    Imei?: boolean
   }
 
-  export type vehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "Type" | "plateNumber" | "make" | "model" | "driverId" | "ownerId" | "capacity" | "companyId", ExtArgs["result"]["vehicle"]>
+  export type vehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "Type" | "plateNumber" | "make" | "model" | "driverId" | "ownerId" | "capacity" | "companyId" | "Imei", ExtArgs["result"]["vehicle"]>
   export type vehicleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     alert?: boolean | vehicle$alertArgs<ExtArgs>
     dailysummary?: boolean | vehicle$dailysummaryArgs<ExtArgs>
@@ -11581,6 +11590,7 @@ export namespace Prisma {
       ownerId: number
       capacity: number | null
       companyId: number | null
+      Imei: string | null
     }, ExtArgs["result"]["vehicle"]>
     composites: {}
   }
@@ -11968,6 +11978,7 @@ export namespace Prisma {
     readonly ownerId: FieldRef<"vehicle", 'Int'>
     readonly capacity: FieldRef<"vehicle", 'Int'>
     readonly companyId: FieldRef<"vehicle", 'Int'>
+    readonly Imei: FieldRef<"vehicle", 'String'>
   }
     
 
@@ -12676,7 +12687,8 @@ export namespace Prisma {
     driverId: 'driverId',
     ownerId: 'ownerId',
     capacity: 'capacity',
-    companyId: 'companyId'
+    companyId: 'companyId',
+    Imei: 'Imei'
   };
 
   export type VehicleScalarFieldEnum = (typeof VehicleScalarFieldEnum)[keyof typeof VehicleScalarFieldEnum]
@@ -12785,7 +12797,8 @@ export namespace Prisma {
     plateNumber: 'plateNumber',
     make: 'make',
     model: 'model',
-    driverId: 'driverId'
+    driverId: 'driverId',
+    Imei: 'Imei'
   };
 
   export type vehicleOrderByRelevanceFieldEnum = (typeof vehicleOrderByRelevanceFieldEnum)[keyof typeof vehicleOrderByRelevanceFieldEnum]
@@ -13611,6 +13624,7 @@ export namespace Prisma {
     ownerId?: IntFilter<"vehicle"> | number
     capacity?: IntNullableFilter<"vehicle"> | number | null
     companyId?: IntNullableFilter<"vehicle"> | number | null
+    Imei?: StringNullableFilter<"vehicle"> | string | null
     alert?: AlertListRelationFilter
     dailysummary?: DailySummaryListRelationFilter
     maintenance?: MaintenanceListRelationFilter
@@ -13632,6 +13646,7 @@ export namespace Prisma {
     ownerId?: SortOrder
     capacity?: SortOrderInput | SortOrder
     companyId?: SortOrderInput | SortOrder
+    Imei?: SortOrderInput | SortOrder
     alert?: alertOrderByRelationAggregateInput
     dailysummary?: dailySummaryOrderByRelationAggregateInput
     maintenance?: maintenanceOrderByRelationAggregateInput
@@ -13657,6 +13672,7 @@ export namespace Prisma {
     ownerId?: IntFilter<"vehicle"> | number
     capacity?: IntNullableFilter<"vehicle"> | number | null
     companyId?: IntNullableFilter<"vehicle"> | number | null
+    Imei?: StringNullableFilter<"vehicle"> | string | null
     alert?: AlertListRelationFilter
     dailysummary?: DailySummaryListRelationFilter
     maintenance?: MaintenanceListRelationFilter
@@ -13678,6 +13694,7 @@ export namespace Prisma {
     ownerId?: SortOrder
     capacity?: SortOrderInput | SortOrder
     companyId?: SortOrderInput | SortOrder
+    Imei?: SortOrderInput | SortOrder
     _count?: vehicleCountOrderByAggregateInput
     _avg?: vehicleAvgOrderByAggregateInput
     _max?: vehicleMaxOrderByAggregateInput
@@ -13698,6 +13715,7 @@ export namespace Prisma {
     ownerId?: IntWithAggregatesFilter<"vehicle"> | number
     capacity?: IntNullableWithAggregatesFilter<"vehicle"> | number | null
     companyId?: IntNullableWithAggregatesFilter<"vehicle"> | number | null
+    Imei?: StringNullableWithAggregatesFilter<"vehicle"> | string | null
   }
 
   export type alertCreateInput = {
@@ -14486,6 +14504,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
@@ -14507,6 +14526,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -14522,6 +14542,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
@@ -14543,6 +14564,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -14561,6 +14583,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
   }
 
   export type vehicleUpdateManyMutationInput = {
@@ -14570,6 +14593,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type vehicleUncheckedUpdateManyInput = {
@@ -14582,6 +14606,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -15546,6 +15571,7 @@ export namespace Prisma {
     ownerId?: SortOrder
     capacity?: SortOrder
     companyId?: SortOrder
+    Imei?: SortOrder
   }
 
   export type vehicleAvgOrderByAggregateInput = {
@@ -15564,6 +15590,7 @@ export namespace Prisma {
     ownerId?: SortOrder
     capacity?: SortOrder
     companyId?: SortOrder
+    Imei?: SortOrder
   }
 
   export type vehicleMinOrderByAggregateInput = {
@@ -15576,6 +15603,7 @@ export namespace Prisma {
     ownerId?: SortOrder
     capacity?: SortOrder
     companyId?: SortOrder
+    Imei?: SortOrder
   }
 
   export type vehicleSumOrderByAggregateInput = {
@@ -16692,6 +16720,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
     maintenance_data?: maintenance_dataCreateNestedManyWithoutVehicleInput
@@ -16712,6 +16741,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
     maintenance_data?: maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
@@ -16775,6 +16805,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
     maintenance_data?: maintenance_dataUpdateManyWithoutVehicleNestedInput
@@ -16795,6 +16826,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance_data?: maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
@@ -16872,6 +16904,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
@@ -16891,6 +16924,7 @@ export namespace Prisma {
     driverId?: string | null
     ownerId: number
     capacity?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -16997,6 +17031,7 @@ export namespace Prisma {
     ownerId?: IntFilter<"vehicle"> | number
     capacity?: IntNullableFilter<"vehicle"> | number | null
     companyId?: IntNullableFilter<"vehicle"> | number | null
+    Imei?: StringNullableFilter<"vehicle"> | string | null
   }
 
   export type vehicleCreateWithoutDailysummaryInput = {
@@ -17006,6 +17041,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
     maintenance_data?: maintenance_dataCreateNestedManyWithoutVehicleInput
@@ -17026,6 +17062,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
     maintenance_data?: maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
@@ -17056,6 +17093,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
     maintenance_data?: maintenance_dataUpdateManyWithoutVehicleNestedInput
@@ -17076,6 +17114,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance_data?: maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
@@ -17148,6 +17187,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
@@ -17167,6 +17207,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -17262,6 +17303,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
@@ -17281,6 +17323,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -17296,6 +17339,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance_data?: maintenance_dataCreateNestedManyWithoutVehicleInput
@@ -17316,6 +17360,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance_data?: maintenance_dataUncheckedCreateNestedManyWithoutVehicleInput
@@ -17346,6 +17391,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance_data?: maintenance_dataUpdateManyWithoutVehicleNestedInput
@@ -17366,6 +17412,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance_data?: maintenance_dataUncheckedUpdateManyWithoutVehicleNestedInput
@@ -17380,6 +17427,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
@@ -17400,6 +17448,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -17430,6 +17479,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
@@ -17450,6 +17500,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -17464,6 +17515,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
@@ -17484,6 +17536,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -17514,6 +17567,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
@@ -17534,6 +17588,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -17548,6 +17603,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
@@ -17568,6 +17624,7 @@ export namespace Prisma {
     ownerId: number
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -17598,6 +17655,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
@@ -17618,6 +17676,7 @@ export namespace Prisma {
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -17660,6 +17719,7 @@ export namespace Prisma {
     make?: string | null
     model?: string | null
     capacity?: number | null
+    Imei?: string | null
     alert?: alertCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceCreateNestedManyWithoutVehicleInput
@@ -17679,6 +17739,7 @@ export namespace Prisma {
     driverId?: string | null
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
     alert?: alertUncheckedCreateNestedManyWithoutVehicleInput
     dailysummary?: dailySummaryUncheckedCreateNestedManyWithoutVehicleInput
     maintenance?: maintenanceUncheckedCreateNestedManyWithoutVehicleInput
@@ -18340,6 +18401,7 @@ export namespace Prisma {
     driverId?: string | null
     ownerId: number
     capacity?: number | null
+    Imei?: string | null
   }
 
   export type driverUpdateWithoutCompaniesInput = {
@@ -18411,6 +18473,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
@@ -18430,6 +18493,7 @@ export namespace Prisma {
     driverId?: NullableStringFieldUpdateOperationsInput | string | null
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -18447,6 +18511,7 @@ export namespace Prisma {
     driverId?: NullableStringFieldUpdateOperationsInput | string | null
     ownerId?: IntFieldUpdateOperationsInput | number
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type alertCreateManyDriverInput = {
@@ -18498,6 +18563,7 @@ export namespace Prisma {
     driverId?: string | null
     capacity?: number | null
     companyId?: number | null
+    Imei?: string | null
   }
 
   export type vehicleUpdateWithoutUsersInput = {
@@ -18507,6 +18573,7 @@ export namespace Prisma {
     make?: NullableStringFieldUpdateOperationsInput | string | null
     model?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUpdateManyWithoutVehicleNestedInput
@@ -18526,6 +18593,7 @@ export namespace Prisma {
     driverId?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
     alert?: alertUncheckedUpdateManyWithoutVehicleNestedInput
     dailysummary?: dailySummaryUncheckedUpdateManyWithoutVehicleNestedInput
     maintenance?: maintenanceUncheckedUpdateManyWithoutVehicleNestedInput
@@ -18543,6 +18611,7 @@ export namespace Prisma {
     driverId?: NullableStringFieldUpdateOperationsInput | string | null
     capacity?: NullableIntFieldUpdateOperationsInput | number | null
     companyId?: NullableIntFieldUpdateOperationsInput | number | null
+    Imei?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type alertCreateManyVehicleInput = {

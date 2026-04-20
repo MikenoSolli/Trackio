@@ -55,6 +55,7 @@ export default function VehicleDetailClient({ vehicle }: VehicleProps) {
   const [activeTab, setActiveTab] = useState("live");
   const [historyData, setHistoryData] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const hasInitialized = useRef(false);
 
   const [playbackEnabled, setPlaybackEnabled] = useState(false);
   const [playbackIndex, setPlaybackIndex] = useState<number>(0);
@@ -75,6 +76,17 @@ export default function VehicleDetailClient({ vehicle }: VehicleProps) {
   }
 }, [playbackEnabled]);
 
+useEffect(()=>{
+if (!hasInitialized.current) {
+    const isBigScreen = window.innerWidth >= 768;
+    
+    if (isBigScreen) {
+      setShowStats(true);
+    }
+    
+    hasInitialized.current = true;
+  }
+});
   const interpolate = (p1: [number, number], p2: [number, number], t: number): [number, number] => {
     return [
       p1[0] + (p2[0] - p1[0]) * t,
@@ -229,21 +241,34 @@ useEffect(() => {
     </div>
       </div>
 
-      {/* 1. PLAYBACK TOGGLE BUTTON (Bottom Left) */}
-      <div className="absolute bottom-6 left-6 z-1001">
+      {/* 1. PLAYBACK TOGGLE BUTTON */}
+      <div className={cn(
+        "absolute z-1001 transition-all duration-300",
+        // Small screens: Move up (bottom-32) to clear the controller and center slightly
+        // Large screens: Stay in the corner (bottom-6 left-6)
+        playbackEnabled 
+          ? "bottom-32 left-6 md:bottom-6 md:left-6" 
+          : "bottom-6 left-6"
+      )}>
         <Button 
           onClick={() => setPlaybackEnabled(!playbackEnabled)}
           className={cn(
-            "h-12 rounded-full shadow-2xl transition-all gap-2 px-4 border-none",
+            "h-10 md:h-12 rounded-full shadow-2xl transition-all gap-2 px-4 border-none",
             playbackEnabled 
-              ? "bg-red-500 hover:bg-red-600 text-white" 
+              ? "bg-red-500 hover:bg-red-600 text-white scale-90 md:scale-100" 
               : "bg-white hover:bg-slate-50 text-slate-900"
           )}
         >
           {playbackEnabled ? (
-            <><XCircle className="h-5 w-5" /> <span>Exit Playback</span></>
+            <>
+              <XCircle className="h-4 w-4 md:h-5 md:w-5" /> 
+              <span className="text-xs md:text-sm">Exit Playback</span>
+            </>
           ) : (
-            <><PlayCircle className="h-5 w-5 text-green-600" /> <span className="font-bold">Playback Mode</span></>
+            <>
+              <PlayCircle className="h-5 w-5 text-green-600" /> 
+              <span className="font-bold">Playback Mode</span>
+            </>
           )}
         </Button>
       </div>
@@ -279,7 +304,7 @@ useEffect(() => {
                 }}
                 className="py-2"
               />
-              </div>
+           </div>
 
               <Button 
                 size="icon" 
@@ -306,16 +331,25 @@ useEffect(() => {
       {/* <div className={cn(`absolute top-24 left-4 z-1000 w-72 space-y-4 transition-all duration-300 transform 
         ${showStats ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 md:translate-x-0 md:opacity-100'}`)}>
          */}
-        <div className={cn(
+        <div 
+          className={cn(
           "absolute top-24 left-4 z-40 w-72 transition-all duration-500 ease-in-out",
           showStats 
-            ? "-translate-x-[calc(100%+16px)] md:-translate-x-[calc(100%-12px)] opacity-0 md:opacity-50" 
-            : "translate-x-0 opacity-90"
+            ? "translate-x-0 opacity-90" // TRUE: Show the panel
+            : "-translate-x-[calc(100%+16px)] md:-translate-x-[calc(100%-12px)] opacity-0 md:opacity-50" // FALSE: Hide/Peek
         )}>
 
-        <Button onClick={() => setShowStats(!showStats)} className="hidden md:flex absolute -right-10 top-0 h-8 w-8 rounded-full bg-white shadow-md border border-slate-200 p-0 items-center justify-center">
-          {showStats ? <ChevronRight className="h-4 w-4 text-slate-600" /> : <ChevronLeft className="h-4 w-4 text-slate-600" /> }
-        </Button>
+          <Button 
+            onClick={() => setShowStats(!showStats)} 
+            className="hidden md:flex absolute -right-10 top-0 h-8 w-8 rounded-full bg-white shadow-md border border-slate-200 p-0 items-center justify-center hover:bg-slate-50 transition-colors"
+          >
+            {/* If panel is shown, arrow points Left (to hide it). If hidden, arrow points Right (to reveal it) */}
+            {showStats ? (
+              <ChevronLeft className="h-4 w-4 text-slate-600" />
+            ) : (
+              <ChevronRight className="h-4 w-4 text-slate-600" />
+            )}
+          </Button>
 
         <div className={`${!showStats ? 'md:block hidden' : 'block'} space-y-4`}>
           <Card className="p-4 shadow-xl border-none bg-white/95 backdrop-blur-sm">
