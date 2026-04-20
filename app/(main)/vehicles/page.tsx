@@ -156,6 +156,17 @@ export default function VehiclesPage() {
        v.Name.toLowerCase().includes(search.toLowerCase())
   )
 
+const activeVehicles = vehicles.filter(v => v.status === "ACTIVE").length;
+
+const offlineVehicles = vehicles.filter(v => v.status === "OFFLINE").length;
+
+const lowFuelVehicles = vehicles.filter(v => v.fuel <= 25).length;
+
+const totalAlertsToday = vehicles.reduce(
+  (sum, v) => sum + (v.alertsToday || 0),
+  0
+);
+
   return (
     <div className="p-6 bg-slate-50 min-h-screen space-y-6">
 
@@ -180,7 +191,7 @@ export default function VehiclesPage() {
             <Car className="h-4 w-4 text-green-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">18</div>
+            <div className="text-2xl font-bold">{activeVehicles}</div>
             <p className="text-xs text-muted-foreground">
               Currently online and moving
             </p>
@@ -195,7 +206,7 @@ export default function VehiclesPage() {
             <Tractor className="h-4 w-4 text-gray-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">6</div>
+            <div className="text-2xl font-bold">{offlineVehicles}</div>
             <p className="text-xs text-muted-foreground">
               Devices not reporting
             </p>
@@ -210,7 +221,7 @@ export default function VehiclesPage() {
             <Fuel className="h-4 w-4 text-amber-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">4</div>
+            <div className="text-2xl font-bold">{lowFuelVehicles}</div>
             <p className="text-xs text-muted-foreground">
               Vehicles below 25% fuel
             </p>
@@ -225,7 +236,7 @@ export default function VehiclesPage() {
             <AlertTriangle className="h-4 w-4 text-red-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">9</div>
+            <div className="text-2xl font-bold">{totalAlertsToday}</div>
             <p className="text-xs text-muted-foreground">
               Active system alerts
             </p>

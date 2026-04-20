@@ -7,6 +7,12 @@ import { getSession } from "@/app/_lib/sessions";
 import { redirect } from "next/navigation";
 
 
+const startOfToday = new Date();
+startOfToday.setHours(0, 0, 0, 0);
+
+const endOfToday = new Date();
+endOfToday.setHours(23, 59, 59, 999);
+
 
 export async function addVehicle(formData: FormData) {
 
@@ -100,28 +106,57 @@ export async function getAllVehiclesDisplayData() {
 const session = await getSession();
   const ownerId = Number(session?.userId); 
   if (!ownerId) return [];
-  const vehicles = await prisma.vehicle.findMany({
+const vehicles = await prisma.vehicle.findMany({
   where: { ownerId: ownerId },
-    include: {
-      status: {
-        orderBy: { lastUpdate: 'desc' },
-        take: 1,
-      },
+  include: {
+    status: {
+      orderBy: { lastUpdate: 'desc' },
+      take: 1,
     },
-  });
+    alert: {
+      where: {
+        createdAt: {
+          gte: startOfToday,
+          lte: endOfToday,
+        },
+      },
+      orderBy: { createdAt: "desc" },
+    },
+  },
+});
   console.log("Fetched Vehicles with Status:", vehicles); // Debugging line
 
   
-  return vehicles.map((v: any) => ({
+ return vehicles.map((v: any) => {
+  const lastUpdate = v.status[0]?.lastUpdate;
+
+  let computedStatus = "OFFLINE";
+
+  if (lastUpdate) {
+    const lastTime = new Date(lastUpdate).getTime();
+    const now = Date.now();
+
+    const diffMinutes = (now - lastTime) / (1000 * 60);
+
+    computedStatus = diffMinutes <= 10 ? "ACTIVE" : "OFFLINE";
+  }
+
+  return {
     id: v.id,
     Name: `${v.make} ${v.model} ${v.plateNumber}`,
     type: v.Type,
-    status: v.status[0]?.state || "OFFLINE",
+    status: computedStatus,
     fuel: v.status[0]?.fuelLevel || 0,
     lat: v.status[0]?.lastLat || 0,
     lng: v.status[0]?.lastLng || 0,
-  })
-);
+    lastSeen: lastUpdate,
+
+    alertsToday: v.alert.length || 0,
+    alerts: v.alert || "Not present", // full alert objects (optional)
+  };
+});
+
+
 }catch (error) {
     // This will print the full, detailed error in your Terminal/Command Prompt
     console.error("❌ PRISMA ERROR:", error);

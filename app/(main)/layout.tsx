@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
 import Navbar from "@/components/layout/navbar"
+import SessionManager from "@/components/layout/sessionManager";
 import { Toaster } from "sonner";
+
 
 
 const geistSans = Geist({
@@ -30,6 +32,7 @@ export default function RootLayout({
   return (
     <div className={`${geistSans.variable} ${geistMono.variable}`}>
       <Navbar />
+      <SessionManager/>
       {children}
       <Toaster position="bottom-right" expand={true} richColors />
     </div>
